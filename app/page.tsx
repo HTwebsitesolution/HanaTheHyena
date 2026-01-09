@@ -155,7 +155,7 @@ export default function HomePage() {
                       playsInline
                       className="h-full w-full object-contain"
                     >
-                      <source src="/HanaTheHyena website hero section.mp4" type="video/mp4" />
+                      <source src="/HanaTheHyena website hero section.mp4?v=2" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                     <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
