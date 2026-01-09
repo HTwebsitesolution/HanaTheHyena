@@ -81,12 +81,34 @@ This folder contains the printable activity PDFs for Hana the Hyena website.
   - Right half: "Back" with lines for message (4-6 lines) + fake stamp box with hyena icon
   - Footer (same as above)
 
-### 7. hana-activity-pack-all-in-one.pdf (Optional)
-- **Purpose**: Combined pack
+### 7. hana-activity-pack-all-in-one.pdf (Complete Pack)
+- **Purpose**: Combined pack with professional cover
+- **Layout**: A4 portrait
+- **First Page**: Professional cover page (see ACTIVITY_PACK_COVER_SPEC.md for detailed design specifications)
+- **Following Pages**: All 6 individual activities collated in this order:
+  1. Hana's Big Dreams colouring page
+  2. Dinner with New Friends colouring page
+  3. Journey maze (Help Hana Find the City)
+  4. Spot the difference (On the Way to Addis)
+  5. Feelings timeline (Hana's Feelings Journey)
+  6. Postcard from Hana writing prompt
+- **Cover Design**: See `ACTIVITY_PACK_COVER_SPEC.md` for complete specifications including:
+  - Logo/title area
+  - Tagline and description
+  - "What's inside" activity list
+  - Credits and usage notice
+  - Visual elements and color palette
+
+### 8. hana-discussion-guide.pdf (Optional)
+- **Purpose**: One-page discussion guide for parents and teachers
 - **Layout**: A4 portrait
 - **Content**:
-  - First page: Cover with "Hana the Hyena · Activity Pack" + small Hana picture + note
-  - Following pages: All 6 individual activities collated
+  - Header (same as above)
+  - Title: "Discussion Guide: The Hyena Who Went To Dinner"
+  - Key themes summary
+  - Discussion questions organized by story moments
+  - Quick activity ideas
+  - Footer (same as above)
 
 ## Design Specifications
 
