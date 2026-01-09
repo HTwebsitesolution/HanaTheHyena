@@ -105,6 +105,9 @@ export default function PlayPage() {
                   <h2 className="mt-4 text-2xl font-bold text-stone-900 sm:text-3xl">
                     Hana Activity Pack
                   </h2>
+                  <p className="mt-3 text-sm italic text-emerald-700 sm:text-base">
+                    Includes a one-page Discussion Guide for parents and teachers to help you talk about courage, belonging, and kindness after reading Hana's story.
+                  </p>
                   <p className="mt-3 text-base text-stone-700 sm:text-lg">
                     Get all 6 printable activities in one convenient PDF. Perfect
                     for teachers, parents, and anyone who wants everything in
