@@ -99,16 +99,23 @@ This folder contains the printable activity PDFs for Hana the Hyena website.
   - Credits and usage notice
   - Visual elements and color palette
 
-### 8. hana-discussion-guide.pdf (Optional)
+### 8. hana-discussion-guide.pdf (Discussion Guide)
 - **Purpose**: One-page discussion guide for parents and teachers
-- **Layout**: A4 portrait
-- **Content**:
-  - Header (same as above)
-  - Title: "Discussion Guide: The Hyena Who Went To Dinner"
-  - Key themes summary
-  - Discussion questions organized by story moments
-  - Quick activity ideas
-  - Footer (same as above)
+- **Layout**: A4 portrait (210 × 297 mm)
+- **Margins**: 12-15 mm all around
+- **Content**: Complete text available in:
+  - `DISCUSSION_GUIDE_TEXT.md` - Formatted markdown with design notes
+  - `DISCUSSION_GUIDE_PLAINTEXT.txt` - Plain text for easy copy/paste
+- **Sections**:
+  - Header: "HANA THE HYENA - Discussion Guide for The Hyena Who Went To Dinner"
+  - Ages and themes
+  - How to use this guide
+  - Before reading (3 questions)
+  - While reading (5 subsections with questions)
+  - After reading (4 questions)
+  - Extend the learning (3 activity ideas)
+  - Footer: "© Habesha Press – For personal and classroom use only. Not for resale."
+- **Design**: Keep text readable but compact to fit on one page (10-11pt body, 12-14pt headers)
 
 ## Design Specifications
 
