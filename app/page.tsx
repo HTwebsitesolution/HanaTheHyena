@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-amber-50/40 text-stone-900">
+    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-amber-50/40 text-stone-900">
       {/* Header */}
       <header className="sticky top-0 z-30 border-b border-amber-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -65,106 +65,113 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="border-b border-amber-200 bg-gradient-to-b from-amber-50 to-amber-100/70">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:flex-row lg:px-8">
-          {/* Text column */}
+      {/* HERO – Night-sky adventure style */}
+      <section className="relative overflow-hidden border-b border-slate-800 bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-900 text-white">
+        {/* subtle star field */}
+        <div className="pointer-events-none absolute inset-0 opacity-50">
+          <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-sky-500/20 blur-3xl" />
+          <div className="absolute right-10 top-0 h-52 w-52 rounded-full bg-amber-400/15 blur-3xl" />
+          <div className="absolute bottom-10 left-1/3 h-40 w-40 rounded-full bg-emerald-400/15 blur-3xl" />
+          {/* dotted stars */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#ffffff33_1px,_transparent_0)] bg-[size:24px_24px] opacity-40" />
+        </div>
+
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:flex-row lg:px-8">
+          {/* Left: text + CTAs */}
           <div className="flex-1">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
               New Ethiopian picture book
             </p>
-            <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
               Hana the Hyena:
-              <span className="block text-amber-700">
+              <span className="block text-amber-300 drop-shadow-[0_0_18px_rgba(251,191,36,0.4)]">
                 an adventure about courage, friendship &amp; food.
               </span>
             </h1>
 
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-stone-800">
-              When curious young Hana leaves her quiet home in Harar for the
-              bright lights of Addis Ababa, nothing is quite what she expects.
-              The city feels big and busy, and for a while she feels very small
-              – until one kind family invites her home for dinner.
+            <p className="mt-5 max-w-xl text-sm sm:text-base text-slate-100/90">
+              When curious young Hana leaves her quiet home in Harar for the bright
+              lights of Addis Ababa, everything feels huge, loud, and unfamiliar.
+              Just when she starts to feel very small, a kind family invites her home
+              for dinner – and everything changes.
             </p>
 
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-stone-700">
-              Based on the picture book <em>The Hyena Who Went To Dinner</em>,
-              Hana&apos;s story gently explores belonging, hospitality, and the
-              joy of sharing food and culture.
+            <p className="mt-3 max-w-xl text-xs sm:text-sm text-slate-200/80">
+              Based on the picture book <em>The Hyena Who Went To Dinner</em>, Hana&apos;s
+              story gently explores belonging, hospitality, and the joy of sharing
+              food and culture.
             </p>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            {/* hero buttons like in the Rosie example */}
+            <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/the-story"
-                className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-amber-300/50 transition hover:bg-amber-700"
+                className="inline-flex items-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_12px_30px_rgba(0,0,0,0.4)] hover:bg-amber-300 transition"
               >
-                Read about the story
-                <span aria-hidden className="ml-2">
-                  →
-                </span>
+                Read the story
+                <span aria-hidden className="ml-2">📖</span>
               </Link>
+
               <Link
                 href="/play"
-                className="inline-flex items-center justify-center rounded-full border border-amber-400 bg-white/80 px-6 py-3 text-sm font-semibold text-amber-800 shadow-sm transition hover:border-amber-500 hover:bg-amber-50"
+                className="inline-flex items-center rounded-full bg-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(236,72,153,0.55)] hover:bg-pink-400 transition"
               >
-                Play &amp; colour with Hana
+                Play &amp; activities
+                <span aria-hidden className="ml-2">🎨</span>
+              </Link>
+
+              <Link
+                href="/parents-teachers"
+                className="inline-flex items-center rounded-full border border-emerald-300/70 bg-emerald-600/40 px-5 py-2.5 text-xs sm:text-sm font-semibold text-emerald-50 shadow-[0_8px_20px_rgba(16,185,129,0.4)] hover:bg-emerald-500/60 transition"
+              >
+                For parents &amp; teachers
               </Link>
             </div>
 
-            <p className="mt-3 text-xs text-stone-500">
-              For children aged 6+ · Perfect for homes, classrooms, and
-              libraries.
+            <p className="mt-4 text-[11px] text-slate-300/80">
+              For children aged 6+ · Perfect for bedtime, classrooms, and libraries.
             </p>
           </div>
 
-          {/* Image / visual column */}
+          {/* Right: book / Hana illustration panel */}
           <div className="flex-1">
-            <div className="relative mx-auto h-56 w-full max-w-sm rounded-3xl bg-gradient-to-br from-emerald-600 via-amber-500 to-rose-400 p-[2px] shadow-xl lg:ml-auto lg:h-64">
-              <div className="flex h-full w-full flex-col justify-between rounded-3xl bg-amber-50/95 p-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">
-                      From Harar to Addis Ababa
-                    </p>
-                    <p className="mt-1 text-sm font-semibold text-stone-900">
-                      Hana&apos;s big-city adventure
-                    </p>
-                  </div>
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-600 text-lg font-bold text-white shadow-sm">
-                    🐾
+            <div className="relative mx-auto h-72 w-full max-w-md rounded-[32px] bg-slate-950/40 p-1 shadow-[0_24px_60px_rgba(0,0,0,0.7)] backdrop-blur-md">
+              <div className="flex h-full w-full flex-col overflow-hidden rounded-[28px] bg-gradient-to-b from-indigo-700 via-indigo-800 to-slate-950">
+                {/* top tag */}
+                <div className="flex items-center justify-between px-4 pt-4">
+                  <span className="rounded-full bg-pink-500/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm">
+                    Hana&apos;s big-city adventure
                   </span>
+                  <span className="text-xl">🐾</span>
                 </div>
 
-                <div className="mt-4 flex-1 rounded-2xl bg-amber-100/60 p-3 text-xs text-stone-700">
-                  {/* This is a placeholder block where you can later drop a real image */}
-                  <p className="font-semibold text-stone-800">
-                    Illustration placeholder
-                  </p>
-                  <p className="mt-1">
-                    Replace this area with a cropped image from the book or a
-                    hero banner of Hana walking towards the city lights of Addis
-                    Ababa.
-                  </p>
+                {/* Illustration placeholder – swap this for real art / book cover */}
+                <div className="mt-4 flex flex-1 items-center justify-center px-4 pb-4">
+                  <div className="relative h-full w-full max-h-52 rounded-3xl bg-slate-900/80">
+                    <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,_#facc1533_0,_transparent_60%)]" />
+                    <div className="relative flex h-full w-full flex-col items-center justify-center px-6 text-center">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200/90">
+                        Illustration placeholder
+                      </p>
+                      <p className="mt-2 text-xs text-slate-100">
+                        Replace this box with a cropped illustration of Hana looking
+                        up at the night sky over Addis Ababa, or with the book cover
+                        of <em>The Hyena Who Went To Dinner</em>.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="mt-3 flex items-center justify-between text-[11px] text-stone-600">
+                {/* meta */}
+                <div className="flex items-center justify-between border-t border-indigo-600/40 bg-slate-950/50 px-4 py-3 text-[11px] text-slate-200">
                   <p>
-                    Written by{" "}
-                    <span className="font-semibold">Joseph Afolabi</span>
-                    {" & "}
+                    By <span className="font-semibold">Joseph Afolabi</span> &amp;{" "}
                     <span className="font-semibold">Feven Teshome</span>
                   </p>
-                  <p className="italic text-amber-700">
-                    Set in Ethiopia 🇪🇹
-                  </p>
+                  <p className="italic text-emerald-300">Set in Ethiopia 🇪🇹</p>
                 </div>
               </div>
             </div>
-
-            <p className="mt-3 text-center text-xs text-stone-500 lg:text-right">
-              Illustration shown here is a placeholder. Update with final art
-              when ready.
-            </p>
           </div>
         </div>
       </section>
