@@ -145,20 +145,20 @@ export default function HomePage() {
                   <span className="text-xl">🐾</span>
                 </div>
 
-                {/* Illustration placeholder – swap this for real art / book cover */}
+                {/* Video hero content */}
                 <div className="mt-4 flex flex-1 items-center justify-center px-4 pb-4">
-                  <div className="relative h-full w-full max-h-52 rounded-3xl bg-slate-900/80">
-                    <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,_#facc1533_0,_transparent_60%)]" />
-                    <div className="relative flex h-full w-full flex-col items-center justify-center px-6 text-center">
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200/90">
-                        Illustration placeholder
-                      </p>
-                      <p className="mt-2 text-xs text-slate-100">
-                        Replace this box with a cropped illustration of Hana looking
-                        up at the night sky over Addis Ababa, or with the book cover
-                        of <em>The Hyena Who Went To Dinner</em>.
-                      </p>
-                    </div>
+                  <div className="relative h-full w-full max-h-52 overflow-hidden rounded-3xl bg-slate-900/80">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="h-full w-full object-cover"
+                    >
+                      <source src="/HanaTheHyena website hero section.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                   </div>
                 </div>
 
