@@ -135,8 +135,8 @@ export default function HomePage() {
 
           {/* Right: book / Hana illustration panel */}
           <div className="flex-1">
-            <div className="relative mx-auto h-72 w-full max-w-md rounded-[32px] bg-slate-950/40 p-1 shadow-[0_24px_60px_rgba(0,0,0,0.7)] backdrop-blur-md">
-              <div className="flex h-full w-full flex-col overflow-hidden rounded-[28px] bg-gradient-to-b from-indigo-700 via-indigo-800 to-slate-950">
+            <div className="relative mx-auto w-full max-w-md rounded-[32px] bg-slate-950/40 p-1 shadow-[0_24px_60px_rgba(0,0,0,0.7)] backdrop-blur-md">
+              <div className="flex w-full flex-col overflow-hidden rounded-[28px] bg-gradient-to-b from-indigo-700 via-indigo-800 to-slate-950">
                 {/* top tag */}
                 <div className="flex items-center justify-between px-4 pt-4">
                   <span className="rounded-full bg-pink-500/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm">
@@ -147,13 +147,13 @@ export default function HomePage() {
 
                 {/* Video hero content */}
                 <div className="mt-4 flex flex-1 items-center justify-center px-4 pb-4">
-                  <div className="relative h-full w-full max-h-52 overflow-hidden rounded-3xl bg-slate-900/80">
+                  <div className="relative w-full max-h-[480px] aspect-square overflow-hidden rounded-3xl bg-slate-900/80">
                     <video
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain"
                     >
                       <source src="/HanaTheHyena website hero section.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
