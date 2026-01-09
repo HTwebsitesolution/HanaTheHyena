@@ -2,6 +2,10 @@
 
 Use this exact text for the cover page design.
 
+## Top Blurb (Discussion Guide)
+
+Includes a one-page Discussion Guide for parents and teachers to help you talk about courage, belonging, and kindness after reading Hana's story.
+
 ## Title Area
 
 **Line 1**: HANA THE HYENA

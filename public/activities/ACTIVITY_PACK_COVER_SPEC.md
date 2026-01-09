@@ -13,13 +13,23 @@
 
 ## Layout Structure
 
-### Top Area (Logo + Title)
-**Position**: Top center, approximately 40-50mm from top
+### Top Area (Discussion Guide Blurb + Logo + Title)
+
+**Discussion Guide Blurb** (At the very top):
+- **Position**: Top center, approximately 15-20mm from top
+- **Text**: "Includes a one-page Discussion Guide for parents and teachers to help you talk about courage, belonging, and kindness after reading Hana's story."
+- **Font**: Sans-serif, italic or regular
+- **Size**: 9-10pt
+- **Color**: #78716C (medium stone gray) or #059669 (emerald-600)
+- **Style**: Subtle, not too prominent
+- **Max width**: 160mm (centered)
+- **Position**: Above logo/title area
 
 **Logo/Image**:
 - Small Hana logo OR cropped circle portrait of Hana
 - Size: Approximately 40-50mm diameter
 - Position: Centered horizontally
+- **Position**: Approximately 10-15mm below discussion guide blurb
 
 **Title** (Below logo, centered):
 - **Line 1**: "HANA THE HYENA"
