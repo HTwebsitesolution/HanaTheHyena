@@ -1,28 +1,379 @@
-export default function Home() {
+import Link from "next/link";
+
+export const metadata = {
+  title: "Hana the Hyena | An Ethiopian Adventure",
+  description:
+    "Official site for Hana the Hyena from The Hyena Who Went To Dinner. Discover the story, meet Hana, and explore free activities and resources for children, parents, and teachers.",
+};
+
+export default function HomePage() {
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: '#fef3c7', padding: '2rem' }}>
-      <h1 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: '#1c1917', marginBottom: '1rem' }}>
-        Hana the Hyena
-      </h1>
-      <p style={{ fontSize: '1.125rem', color: '#44403c', marginTop: '1rem' }}>
-        Welcome to Hana's website. This is a placeholder home page.
-      </p>
-      <div style={{ marginTop: '2rem' }}>
-        <a 
-          href="/play" 
-          style={{ 
-            display: 'inline-block',
-            padding: '0.75rem 1.5rem',
-            backgroundColor: '#d97706',
-            color: 'white',
-            textDecoration: 'none',
-            borderRadius: '9999px',
-            fontWeight: '600'
-          }}
-        >
-          Go to Play & Activities →
-        </a>
-      </div>
+    <main className="min-h-screen bg-amber-50/40 text-stone-900">
+      {/* Header */}
+      <header className="sticky top-0 z-30 border-b border-amber-200 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-500/90 text-lg font-bold text-white shadow-sm">
+              H
+            </div>
+            <div>
+              <p className="text-base font-semibold tracking-tight">
+                Hana the Hyena
+              </p>
+              <p className="text-xs text-stone-500">
+                An Ethiopian children&apos;s story
+              </p>
+            </div>
+          </div>
+
+          <nav className="hidden gap-6 text-sm font-medium text-stone-700 sm:flex">
+            <Link
+              href="/the-story"
+              className="hover:text-amber-700 transition-colors"
+            >
+              The Story
+            </Link>
+            <Link
+              href="/meet-hana"
+              className="hover:text-amber-700 transition-colors"
+            >
+              Meet Hana
+            </Link>
+            <Link
+              href="/play"
+              className="hover:text-amber-700 transition-colors"
+            >
+              Play &amp; Activities
+            </Link>
+            <Link
+              href="/parents-teachers"
+              className="hover:text-amber-700 transition-colors"
+            >
+              For Parents &amp; Teachers
+            </Link>
+          </nav>
+
+          {/* Mobile nav placeholder (simple link to Play for now) */}
+          <div className="flex items-center gap-2 sm:hidden">
+            <Link
+              href="/play"
+              className="rounded-full bg-amber-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-amber-700"
+            >
+              Play with Hana
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="border-b border-amber-200 bg-gradient-to-b from-amber-50 to-amber-100/70">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:flex-row lg:px-8">
+          {/* Text column */}
+          <div className="flex-1">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber-700">
+              New Ethiopian picture book
+            </p>
+            <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+              Hana the Hyena:
+              <span className="block text-amber-700">
+                an adventure about courage, friendship &amp; food.
+              </span>
+            </h1>
+
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-stone-800">
+              When curious young Hana leaves her quiet home in Harar for the
+              bright lights of Addis Ababa, nothing is quite what she expects.
+              The city feels big and busy, and for a while she feels very small
+              – until one kind family invites her home for dinner.
+            </p>
+
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-stone-700">
+              Based on the picture book <em>The Hyena Who Went To Dinner</em>,
+              Hana&apos;s story gently explores belonging, hospitality, and the
+              joy of sharing food and culture.
+            </p>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/the-story"
+                className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-amber-300/50 transition hover:bg-amber-700"
+              >
+                Read about the story
+                <span aria-hidden className="ml-2">
+                  →
+                </span>
+              </Link>
+              <Link
+                href="/play"
+                className="inline-flex items-center justify-center rounded-full border border-amber-400 bg-white/80 px-6 py-3 text-sm font-semibold text-amber-800 shadow-sm transition hover:border-amber-500 hover:bg-amber-50"
+              >
+                Play &amp; colour with Hana
+              </Link>
+            </div>
+
+            <p className="mt-3 text-xs text-stone-500">
+              For children aged 6+ · Perfect for homes, classrooms, and
+              libraries.
+            </p>
+          </div>
+
+          {/* Image / visual column */}
+          <div className="flex-1">
+            <div className="relative mx-auto h-56 w-full max-w-sm rounded-3xl bg-gradient-to-br from-emerald-600 via-amber-500 to-rose-400 p-[2px] shadow-xl lg:ml-auto lg:h-64">
+              <div className="flex h-full w-full flex-col justify-between rounded-3xl bg-amber-50/95 p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-amber-700">
+                      From Harar to Addis Ababa
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-stone-900">
+                      Hana&apos;s big-city adventure
+                    </p>
+                  </div>
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-600 text-lg font-bold text-white shadow-sm">
+                    🐾
+                  </span>
+                </div>
+
+                <div className="mt-4 flex-1 rounded-2xl bg-amber-100/60 p-3 text-xs text-stone-700">
+                  {/* This is a placeholder block where you can later drop a real image */}
+                  <p className="font-semibold text-stone-800">
+                    Illustration placeholder
+                  </p>
+                  <p className="mt-1">
+                    Replace this area with a cropped image from the book or a
+                    hero banner of Hana walking towards the city lights of Addis
+                    Ababa.
+                  </p>
+                </div>
+
+                <div className="mt-3 flex items-center justify-between text-[11px] text-stone-600">
+                  <p>
+                    Written by{" "}
+                    <span className="font-semibold">Joseph Afolabi</span>
+                    {" & "}
+                    <span className="font-semibold">Feven Teshome</span>
+                  </p>
+                  <p className="italic text-amber-700">
+                    Set in Ethiopia 🇪🇹
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-3 text-center text-xs text-stone-500 lg:text-right">
+              Illustration shown here is a placeholder. Update with final art
+              when ready.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About the Book */}
+      <section className="border-b border-amber-100 bg-white/90">
+        <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1.4fr,1fr] lg:items-start">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">
+                About the book
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-stone-800">
+                <em>The Hyena Who Went To Dinner</em> follows Hana, a young
+                hyena from Harar who dreams of visiting Addis Ababa. When she
+                finally reaches the big city, everything feels loud, fast, and
+                unfamiliar. For a moment, she wonders if she made a mistake.
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-stone-800">
+                Everything changes when a kind family notices her, smiles, and
+                invites her to share their dinner table. Around soft injera,
+                spicy doro wat, and tender gomen besiga, Hana discovers new
+                flavours, new friends, and a new kind of courage. By sharing her
+                own traditions too, she learns that even when we are different,
+                we can still belong.
+              </p>
+            </div>
+
+            <div className="space-y-4 rounded-2xl border border-amber-100 bg-amber-50/60 p-5 text-sm text-stone-800">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-amber-800">
+                Why children (and adults) love it
+              </h3>
+              <ul className="space-y-2">
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-700" />
+                  <span>
+                    A brave, funny animal character children can root for.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-700" />
+                  <span>
+                    Repeating lines and rhythm that invite children to join in.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-700" />
+                  <span>
+                    A gentle way to explore courage, kindness, and trying new
+                    things.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-700" />
+                  <span>
+                    Rich Ethiopian setting that brings real places and food
+                    into children&apos;s imaginations.
+                  </span>
+                </li>
+              </ul>
+
+              <div className="pt-2">
+                <Link
+                  href="/the-story"
+                  className="inline-flex text-sm font-semibold text-amber-800 underline decoration-amber-400 underline-offset-4 hover:text-amber-900"
+                >
+                  Learn more about the story →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Highlight sections: Meet Hana / Play / Parents & Teachers */}
+      <section className="border-b border-emerald-100 bg-emerald-50/40">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">
+            Explore Hana&apos;s world
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm text-stone-700">
+            Whether you are a child, a parent, or a teacher, there is more to
+            discover. Meet Hana, play through her adventure, and use the free
+            resources to bring the story to life.
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {/* Meet Hana */}
+            <article className="flex flex-col rounded-2xl border border-emerald-100 bg-white/90 p-5 shadow-sm">
+              <h3 className="text-lg font-semibold text-stone-900">
+                Meet Hana
+              </h3>
+              <p className="mt-2 text-sm text-stone-700">
+                Find out who Hana is, what she dreams about, and why she decides
+                to leave Harar for the bright lights of Addis Ababa.
+              </p>
+              <div className="mt-4">
+                <Link
+                  href="/meet-hana"
+                  className="text-sm font-semibold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-900"
+                >
+                  Meet Hana →
+                </Link>
+              </div>
+            </article>
+
+            {/* Play & Activities */}
+            <article className="flex flex-col rounded-2xl border border-emerald-100 bg-white/90 p-5 shadow-sm">
+              <h3 className="text-lg font-semibold text-stone-900">
+                Play &amp; Activities
+              </h3>
+              <p className="mt-2 text-sm text-stone-700">
+                Download free colouring pages, puzzles, and creative worksheets
+                based on Hana&apos;s journey from Harar to Addis Ababa.
+              </p>
+              <div className="mt-4">
+                <Link
+                  href="/play"
+                  className="text-sm font-semibold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-900"
+                >
+                  Visit the play page →
+                </Link>
+              </div>
+            </article>
+
+            {/* Parents & Teachers */}
+            <article className="flex flex-col rounded-2xl border border-emerald-100 bg-white/90 p-5 shadow-sm">
+              <h3 className="text-lg font-semibold text-stone-900">
+                For Parents &amp; Teachers
+              </h3>
+              <p className="mt-2 text-sm text-stone-700">
+                Access a one-page discussion guide, theme ideas, and simple
+                activities to support learning about courage, belonging, and
+                Ethiopian culture.
+              </p>
+              <div className="mt-4">
+                <Link
+                  href="/parents-teachers"
+                  className="text-sm font-semibold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-900"
+                >
+                  See the guide →
+                </Link>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to action / Book link */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="rounded-3xl border border-amber-100 bg-amber-50/70 p-6 sm:p-8">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2 className="text-xl font-semibold text-stone-900 sm:text-2xl">
+                  Ready to share Hana&apos;s adventure?
+                </h2>
+                <p className="mt-2 text-sm text-stone-700">
+                  Bring <em>The Hyena Who Went To Dinner</em> into your home or
+                  classroom, then return here for free activities, discussion
+                  ideas, and future adventures with Hana the Hyena.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 sm:items-end">
+                <a
+                  href="https://www.amazon.com/s?k=the+hyena+who+went+to+dinner&i=stripbooks-intl-ship&crid=1DQDFPI1HMPRQ&sprefix=the+hyena+who+went+to+dinner%2Cstripbooks-intl-ship%2C209&ref=nb_sb_noss"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-amber-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-amber-300/50 transition hover:bg-amber-700"
+                >
+                  View the book on Amazon
+                  <span aria-hidden className="ml-2">
+                    ↗
+                  </span>
+                </a>
+                <p className="text-[11px] text-stone-500">
+                  Link will open in a new tab.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-stone-200 bg-stone-900">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-stone-300 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <div>
+            <p className="font-semibold text-stone-100">
+              Hana the Hyena · The Hyena Who Went To Dinner
+            </p>
+            <p className="mt-1 text-[11px] text-stone-400">
+              Created by Joseph Afolabi &amp; Feven Teshome. Published by{" "}
+              <a
+                href="https://habeshapress.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
+              >
+                Habesha Press
+              </a>
+              .
+            </p>
+          </div>
+          <div className="text-[11px] text-stone-500">
+            © {new Date().getFullYear()} Habesha Press. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
