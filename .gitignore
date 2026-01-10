@@ -37,3 +37,6 @@ next-env.d.ts
 # temporary files
 ~$*
 *.tmp
+
+# backup files (keeping page-backup.tsx for safety)
+# page-backup.tsx - NOT ignored, keeping in repo for backup
