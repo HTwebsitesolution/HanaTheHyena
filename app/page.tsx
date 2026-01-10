@@ -1,53 +1,53 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Hana the Hyena | An Ethiopian Adventure",
+  title: "Hana the Hyena – The Hyena Who Went To Dinner | Official Site",
   description:
-    "Official site for Hana the Hyena from The Hyena Who Went To Dinner. Discover the story, meet Hana, and explore free activities and resources for children, parents, and teachers.",
+    "Official site for The Hyena Who Went To Dinner by Joseph Afolabi and Feven Teshome. Meet Hana the Hyena, discover the story, and explore free activities and resources for children, parents, and teachers.",
 };
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-amber-50/40 text-stone-900">
       {/* Header */}
-      <header className="sticky top-0 z-30 border-b border-amber-200 bg-white/90 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-slate-700/50 bg-slate-950/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-500/90 text-lg font-bold text-white shadow-sm">
               H
             </div>
             <div>
-              <p className="text-base font-semibold tracking-tight">
+              <p className="text-base font-semibold tracking-tight text-white">
                 Hana the Hyena
               </p>
-              <p className="text-xs text-stone-500">
-                An Ethiopian children&apos;s story
+              <p className="text-xs text-slate-300">
+                Official site for <em>The Hyena Who Went To Dinner</em>
               </p>
             </div>
           </div>
 
-          <nav className="hidden gap-6 text-sm font-medium text-stone-700 sm:flex">
+          <nav className="hidden gap-6 text-sm font-medium text-slate-200 sm:flex">
             <Link
               href="/the-story"
-              className="hover:text-amber-700 transition-colors"
+              className="hover:text-amber-300 transition-colors"
             >
               The Story
             </Link>
             <Link
               href="/meet-hana"
-              className="hover:text-amber-700 transition-colors"
+              className="hover:text-amber-300 transition-colors"
             >
               Meet Hana
             </Link>
             <Link
               href="/play"
-              className="hover:text-amber-700 transition-colors"
+              className="hover:text-amber-300 transition-colors"
             >
               Play &amp; Activities
             </Link>
             <Link
               href="/parents-teachers"
-              className="hover:text-amber-700 transition-colors"
+              className="hover:text-amber-300 transition-colors"
             >
               For Parents &amp; Teachers
             </Link>
@@ -80,25 +80,24 @@ export default function HomePage() {
           {/* Left: text + CTAs */}
           <div className="flex-1">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
-              New Ethiopian picture book
+              Hana the Hyena · An Ethiopian children&apos;s story
             </p>
-            <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-              Hana the Hyena:
-              <span className="block text-amber-300 drop-shadow-[0_0_18px_rgba(251,191,36,0.4)]">
-                an adventure about courage, friendship &amp; food.
-              </span>
+            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+              The Hyena Who Went To Dinner
             </h1>
+            <p className="mt-3 text-xl sm:text-2xl font-semibold text-amber-300 drop-shadow-[0_0_18px_rgba(251,191,36,0.4)]">
+              A heartwarming Ethiopian tale of courage, friendship &amp; food.
+            </p>
 
             <p className="mt-5 max-w-xl text-sm sm:text-base text-slate-100/90">
-              When curious young Hana leaves her quiet home in Harar for the bright
+              In <em>The Hyena Who Went To Dinner</em>, curious young Hana the Hyena leaves her quiet home in Harar for the bright
               lights of Addis Ababa, everything feels huge, loud, and unfamiliar.
               Just when she starts to feel very small, a kind family invites her home
               for dinner – and everything changes.
             </p>
 
             <p className="mt-3 max-w-xl text-xs sm:text-sm text-slate-200/80">
-              Based on the picture book <em>The Hyena Who Went To Dinner</em>, Hana&apos;s
-              story gently explores belonging, hospitality, and the joy of sharing
+              Hana&apos;s story gently explores belonging, hospitality, and the joy of sharing
               food and culture.
             </p>
 
@@ -185,8 +184,8 @@ export default function HomePage() {
                 About the book
               </h2>
               <p className="mt-4 text-base leading-relaxed text-stone-800">
-                <em>The Hyena Who Went To Dinner</em> follows Hana, a young
-                hyena from Harar who dreams of visiting Addis Ababa. When she
+                In <em>The Hyena Who Went To Dinner</em>, Hana the Hyena, a young
+                hyena from Harar, dreams of visiting Addis Ababa. When she
                 finally reaches the big city, everything feels loud, fast, and
                 unfamiliar. For a moment, she wonders if she made a mistake.
               </p>
@@ -327,12 +326,12 @@ export default function HomePage() {
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-xl font-semibold text-stone-900 sm:text-2xl">
-                  Ready to share Hana&apos;s adventure?
+                  Ready to share <em>The Hyena Who Went To Dinner</em>?
                 </h2>
                 <p className="mt-2 text-sm text-stone-700">
-                  Bring <em>The Hyena Who Went To Dinner</em> into your home or
+                  Bring Hana the Hyena&apos;s adventure into your home or
                   classroom, then return here for free activities, discussion
-                  ideas, and future adventures with Hana the Hyena.
+                  ideas, and future adventures with Hana.
                 </p>
               </div>
               <div className="flex flex-col gap-2 sm:items-end">
