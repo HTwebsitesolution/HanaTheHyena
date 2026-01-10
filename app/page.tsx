@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "Hana the Hyena – The Hyena Who Went To Dinner | Official Site",
@@ -9,58 +10,99 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-amber-50/40 text-stone-900">
-      {/* Header */}
-      <header className="sticky top-0 z-30 border-b border-amber-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-500/90 text-lg font-bold text-white shadow-sm">
-              H
+      {/* Header - Colorful & Child-Friendly - BIGGER! */}
+      <header className="sticky top-0 z-30 border-b-2 border-amber-300/50 bg-gradient-to-r from-amber-50 via-pink-50/30 to-emerald-50/40 backdrop-blur-md shadow-lg shadow-amber-200/30">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+          {/* Logo Section - BIGGER & More Playful */}
+          <Link href="/" className="group flex items-center gap-4 transition-transform hover:scale-105 active:scale-95">
+            <div className="relative">
+              <div className="flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-amber-400 via-pink-400 to-emerald-400 p-1 shadow-xl shadow-amber-400/50 group-hover:shadow-2xl group-hover:shadow-amber-400/70 transition-all group-hover:rotate-3">
+                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-amber-500 via-pink-500 to-emerald-500 animate-float">
+                  <Image
+                    src="/HanaTheHyena website inside logo.png"
+                    alt="Hana the Hyena"
+                    width={96}
+                    height={96}
+                    className="h-full w-full object-contain p-2"
+                    priority
+                  />
+                </div>
+              </div>
+              {/* BIGGER Floating sparkle effects */}
+              <div className="absolute -right-1 -top-1 h-4 w-4 sm:h-5 sm:w-5 animate-sparkle rounded-full bg-pink-400 shadow-xl shadow-pink-400/70" />
+              <div className="absolute -bottom-1 -left-1 h-3.5 w-3.5 sm:h-4 sm:w-4 animate-sparkle delay-75 rounded-full bg-amber-400 shadow-lg shadow-amber-400/60" />
             </div>
             <div>
-              <p className="text-base font-semibold tracking-tight">
+              <p className="text-xl sm:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-amber-600 via-pink-600 to-emerald-600 bg-clip-text text-transparent group-hover:from-amber-500 group-hover:via-pink-500 group-hover:to-emerald-500 transition-all">
                 Hana the Hyena
               </p>
-              <p className="text-xs text-stone-500">
-                Official site for <em>The Hyena Who Went To Dinner</em>
+              <p className="text-sm sm:text-base font-medium text-emerald-600 animate-pulse mt-0.5">
+                Adventure awaits! 🌟
               </p>
             </div>
-          </div>
+          </Link>
 
-          <nav className="hidden gap-6 text-sm font-medium text-stone-700 sm:flex">
+          {/* Desktop Navigation - BIGGER Colorful Pills */}
+          <nav className="hidden items-center gap-4 sm:flex">
             <Link
               href="/the-story"
-              className="hover:text-amber-700 transition-colors"
+              className="group relative rounded-full bg-gradient-to-r from-amber-400 to-amber-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-amber-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-amber-400/70"
             >
-              The Story
+              <span className="relative z-10 flex items-center gap-2 text-lg">
+                📚 The Story
+              </span>
             </Link>
             <Link
               href="/meet-hana"
-              className="hover:text-amber-700 transition-colors"
+              className="group relative rounded-full bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-pink-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-pink-400/70"
             >
-              Meet Hana
+              <span className="relative z-10 flex items-center gap-2 text-lg">
+                🦁 Meet Hana
+              </span>
             </Link>
             <Link
               href="/play"
-              className="hover:text-amber-700 transition-colors"
+              className="group relative rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-emerald-400/70"
             >
-              Play &amp; Activities
+              <span className="relative z-10 flex items-center gap-2 text-lg">
+                🎨 Play
+              </span>
             </Link>
             <Link
               href="/parents-teachers"
-              className="hover:text-amber-700 transition-colors"
+              className="group relative rounded-full border-2 border-indigo-300 bg-gradient-to-r from-indigo-50 to-purple-50 px-6 py-3.5 text-base font-bold text-indigo-700 shadow-md transition-all hover:scale-110 hover:border-indigo-400 hover:bg-gradient-to-r hover:from-indigo-100 hover:to-purple-100"
             >
-              For Parents &amp; Teachers
+              <span className="relative z-10 flex items-center gap-2 text-lg">
+                👩‍🏫 For Grown-ups
+              </span>
             </Link>
           </nav>
 
-          {/* Mobile nav placeholder (simple link to Play for now) */}
-          <div className="flex items-center gap-2 sm:hidden">
+          {/* Mobile Navigation - BIGGER Fun Hamburger Style */}
+          <div className="flex items-center gap-3 sm:hidden">
             <Link
               href="/play"
-              className="rounded-full bg-amber-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-amber-700"
+              className="relative rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-400/50 transition-all active:scale-95"
             >
-              Play with Hana
+              🎨 Play
             </Link>
+            <button
+              aria-label="Menu"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-pink-400 text-white shadow-lg transition-all active:scale-95"
+            >
+              <span className="text-2xl">☰</span>
+            </button>
+          </div>
+        </div>
+
+        {/* BIGGER Decorative bottom border with animated stars */}
+        <div className="relative h-2 overflow-hidden bg-gradient-to-r from-transparent via-amber-300/60 via-pink-300/40 to-transparent">
+          <div className="absolute inset-0 flex items-center justify-center gap-4">
+            <span className="text-base animate-sparkle">✨</span>
+            <span className="text-sm animate-sparkle delay-75">⭐</span>
+            <span className="text-base animate-sparkle delay-150">💫</span>
+            <span className="text-sm animate-sparkle delay-75">⭐</span>
+            <span className="text-base animate-sparkle">✨</span>
           </div>
         </div>
       </header>
