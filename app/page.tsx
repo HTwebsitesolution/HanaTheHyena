@@ -10,44 +10,44 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-amber-50/40 text-stone-900">
       {/* Header */}
-      <header className="sticky top-0 z-30 border-b border-slate-700/50 bg-slate-950/90 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-amber-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-500/90 text-lg font-bold text-white shadow-sm">
               H
             </div>
             <div>
-              <p className="text-base font-semibold tracking-tight text-white">
+              <p className="text-base font-semibold tracking-tight">
                 Hana the Hyena
               </p>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-stone-500">
                 Official site for <em>The Hyena Who Went To Dinner</em>
               </p>
             </div>
           </div>
 
-          <nav className="hidden gap-6 text-sm font-medium text-slate-200 sm:flex">
+          <nav className="hidden gap-6 text-sm font-medium text-stone-700 sm:flex">
             <Link
               href="/the-story"
-              className="hover:text-amber-300 transition-colors"
+              className="hover:text-amber-700 transition-colors"
             >
               The Story
             </Link>
             <Link
               href="/meet-hana"
-              className="hover:text-amber-300 transition-colors"
+              className="hover:text-amber-700 transition-colors"
             >
               Meet Hana
             </Link>
             <Link
               href="/play"
-              className="hover:text-amber-300 transition-colors"
+              className="hover:text-amber-700 transition-colors"
             >
               Play &amp; Activities
             </Link>
             <Link
               href="/parents-teachers"
-              className="hover:text-amber-300 transition-colors"
+              className="hover:text-amber-700 transition-colors"
             >
               For Parents &amp; Teachers
             </Link>
