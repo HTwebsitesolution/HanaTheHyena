@@ -9,15 +9,15 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-amber-50/40 text-stone-900">
+    <main className="min-h-screen bg-gradient-to-b from-sky-50 via-cyan-50 to-purple-50/30 text-stone-900">
       {/* Header - Colorful & Child-Friendly - BIGGER! */}
-      <header className="sticky top-0 z-30 border-b-2 border-amber-300/50 bg-gradient-to-r from-amber-50 via-pink-50/30 to-emerald-50/40 backdrop-blur-md shadow-lg shadow-amber-200/30">
+      <header className="sticky top-0 z-30 border-b-2 border-violet-300/50 bg-gradient-to-r from-violet-50 via-pink-50 to-cyan-50 backdrop-blur-md shadow-lg shadow-violet-200/30">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
           {/* Logo Section - BIGGER & More Playful */}
           <Link href="/" className="group flex items-center gap-4 transition-transform hover:scale-105 active:scale-95">
             <div className="relative">
-              <div className="flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-amber-400 via-pink-400 to-emerald-400 p-1 shadow-xl shadow-amber-400/50 group-hover:shadow-2xl group-hover:shadow-amber-400/70 transition-all group-hover:rotate-3">
-                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-amber-500 via-pink-500 to-emerald-500 animate-float">
+              <div className="flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-violet-400 via-pink-400 to-cyan-400 p-1 shadow-xl shadow-violet-400/50 group-hover:shadow-2xl group-hover:shadow-violet-400/70 transition-all group-hover:rotate-3">
+                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-violet-500 via-pink-500 to-cyan-500 animate-float">
                   <Image
                     src="/HanaTheHyena website inside logo.png"
                     alt="Hana the Hyena"
@@ -30,13 +30,13 @@ export default function HomePage() {
               </div>
               {/* BIGGER Floating sparkle effects */}
               <div className="absolute -right-1 -top-1 h-4 w-4 sm:h-5 sm:w-5 animate-sparkle rounded-full bg-pink-400 shadow-xl shadow-pink-400/70" />
-              <div className="absolute -bottom-1 -left-1 h-3.5 w-3.5 sm:h-4 sm:w-4 animate-sparkle delay-75 rounded-full bg-amber-400 shadow-lg shadow-amber-400/60" />
+              <div className="absolute -bottom-1 -left-1 h-3.5 w-3.5 sm:h-4 sm:w-4 animate-sparkle delay-75 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400/60" />
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-amber-600 via-pink-600 to-emerald-600 bg-clip-text text-transparent group-hover:from-amber-500 group-hover:via-pink-500 group-hover:to-emerald-500 transition-all">
+              <p className="text-xl sm:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-violet-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent group-hover:from-violet-500 group-hover:via-pink-500 group-hover:to-cyan-500 transition-all">
                 Hana the Hyena
               </p>
-              <p className="text-sm sm:text-base font-medium text-emerald-600 animate-pulse mt-0.5">
+              <p className="text-sm sm:text-base font-medium text-cyan-600 animate-pulse mt-0.5">
                 Adventure awaits! 🌟
               </p>
             </div>
@@ -46,7 +46,7 @@ export default function HomePage() {
           <nav className="hidden items-center gap-4 sm:flex">
             <Link
               href="/the-story"
-              className="group relative rounded-full bg-gradient-to-r from-amber-400 to-amber-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-amber-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-amber-400/70"
+              className="group relative rounded-full bg-gradient-to-r from-violet-500 to-purple-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-violet-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-violet-400/70"
             >
               <span className="relative z-10 flex items-center gap-2 text-lg">
                 📚 The Story
@@ -54,7 +54,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/meet-hana"
-              className="group relative rounded-full bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-pink-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-pink-400/70"
+              className="group relative rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-pink-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-pink-400/70"
             >
               <span className="relative z-10 flex items-center gap-2 text-lg">
                 🦁 Meet Hana
@@ -62,7 +62,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/play"
-              className="group relative rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-emerald-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-emerald-400/70"
+              className="group relative rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-cyan-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-cyan-400/70"
             >
               <span className="relative z-10 flex items-center gap-2 text-lg">
                 🎨 Play
@@ -88,7 +88,7 @@ export default function HomePage() {
             </Link>
             <button
               aria-label="Menu"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-pink-400 text-white shadow-lg transition-all active:scale-95"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-pink-500 text-white shadow-lg transition-all active:scale-95"
             >
               <span className="text-2xl">☰</span>
             </button>
@@ -96,7 +96,7 @@ export default function HomePage() {
         </div>
 
         {/* BIGGER Decorative bottom border with animated stars */}
-        <div className="relative h-2 overflow-hidden bg-gradient-to-r from-transparent via-amber-300/60 via-pink-300/40 to-transparent">
+        <div className="relative h-2 overflow-hidden bg-gradient-to-r from-transparent via-violet-300/60 via-pink-300/40 via-cyan-300/40 to-transparent">
           <div className="absolute inset-0 flex items-center justify-center gap-4">
             <span className="text-base animate-sparkle">✨</span>
             <span className="text-sm animate-sparkle delay-75">⭐</span>
@@ -127,7 +127,7 @@ export default function HomePage() {
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
               The Hyena Who Went To Dinner
             </h1>
-            <p className="mt-3 text-xl sm:text-2xl font-semibold text-amber-300 drop-shadow-[0_0_18px_rgba(251,191,36,0.4)]">
+            <p className="mt-3 text-xl sm:text-2xl font-semibold text-cyan-300 drop-shadow-[0_0_18px_rgba(34,211,238,0.4)]">
               A heartwarming Ethiopian tale of courage, friendship &amp; food.
             </p>
 
@@ -147,7 +147,7 @@ export default function HomePage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/the-story"
-                className="inline-flex items-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_12px_30px_rgba(0,0,0,0.4)] hover:bg-amber-300 transition"
+                className="inline-flex items-center rounded-full bg-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(139,92,246,0.5)] hover:bg-violet-400 transition"
               >
                 Read the story
                 <span aria-hidden className="ml-2">📖</span>
@@ -163,7 +163,7 @@ export default function HomePage() {
 
               <Link
                 href="/parents-teachers"
-                className="inline-flex items-center rounded-full border border-emerald-300/70 bg-emerald-600/40 px-5 py-2.5 text-xs sm:text-sm font-semibold text-emerald-50 shadow-[0_8px_20px_rgba(16,185,129,0.4)] hover:bg-emerald-500/60 transition"
+                className="inline-flex items-center rounded-full border border-cyan-300/70 bg-cyan-600/40 px-5 py-2.5 text-xs sm:text-sm font-semibold text-cyan-50 shadow-[0_8px_20px_rgba(8,145,178,0.4)] hover:bg-cyan-500/60 transition"
               >
                 For parents &amp; teachers
               </Link>
@@ -218,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* About the Book */}
-      <section className="border-b border-amber-100 bg-white/90">
+      <section className="border-b border-violet-100 bg-white/90">
         <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1.4fr,1fr] lg:items-start">
             <div>
@@ -241,32 +241,32 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="space-y-4 rounded-2xl border border-amber-100 bg-amber-50/60 p-5 text-sm text-stone-800">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-amber-800">
+            <div className="space-y-4 rounded-2xl border border-violet-100 bg-violet-50/60 p-5 text-sm text-stone-800">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-violet-800">
                 Why children (and adults) love it
               </h3>
               <ul className="space-y-2">
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-700" />
+                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-violet-700" />
                   <span>
                     A brave, funny animal character children can root for.
                   </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-700" />
+                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-violet-700" />
                   <span>
                     Repeating lines and rhythm that invite children to join in.
                   </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-700" />
+                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-violet-700" />
                   <span>
                     A gentle way to explore courage, kindness, and trying new
                     things.
                   </span>
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-amber-700" />
+                  <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-violet-700" />
                   <span>
                     Rich Ethiopian setting that brings real places and food
                     into children&apos;s imaginations.
@@ -277,7 +277,7 @@ export default function HomePage() {
               <div className="pt-2">
                 <Link
                   href="/the-story"
-                  className="inline-flex text-sm font-semibold text-amber-800 underline decoration-amber-400 underline-offset-4 hover:text-amber-900"
+                  className="inline-flex text-sm font-semibold text-violet-800 underline decoration-violet-400 underline-offset-4 hover:text-violet-900"
                 >
                   Learn more about the story →
                 </Link>
@@ -288,7 +288,7 @@ export default function HomePage() {
       </section>
 
       {/* Highlight sections: Meet Hana / Play / Parents & Teachers */}
-      <section className="border-b border-emerald-100 bg-emerald-50/40">
+      <section className="border-b border-cyan-100 bg-cyan-50/40">
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
           <h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">
             Explore Hana&apos;s world
@@ -301,7 +301,7 @@ export default function HomePage() {
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {/* Meet Hana */}
-            <article className="flex flex-col rounded-2xl border border-emerald-100 bg-white/90 p-5 shadow-sm">
+            <article className="flex flex-col rounded-2xl border border-pink-200 bg-white/90 p-5 shadow-sm">
               <h3 className="text-lg font-semibold text-stone-900">
                 Meet Hana
               </h3>
@@ -312,7 +312,7 @@ export default function HomePage() {
               <div className="mt-4">
                 <Link
                   href="/meet-hana"
-                  className="text-sm font-semibold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-900"
+                  className="text-sm font-semibold text-pink-700 underline decoration-pink-400 underline-offset-4 hover:text-pink-800"
                 >
                   Meet Hana →
                 </Link>
@@ -320,7 +320,7 @@ export default function HomePage() {
             </article>
 
             {/* Play & Activities */}
-            <article className="flex flex-col rounded-2xl border border-emerald-100 bg-white/90 p-5 shadow-sm">
+            <article className="flex flex-col rounded-2xl border border-cyan-200 bg-white/90 p-5 shadow-sm">
               <h3 className="text-lg font-semibold text-stone-900">
                 Play &amp; Activities
               </h3>
@@ -331,7 +331,7 @@ export default function HomePage() {
               <div className="mt-4">
                 <Link
                   href="/play"
-                  className="text-sm font-semibold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-900"
+                  className="text-sm font-semibold text-cyan-700 underline decoration-cyan-400 underline-offset-4 hover:text-cyan-800"
                 >
                   Visit the play page →
                 </Link>
@@ -339,7 +339,7 @@ export default function HomePage() {
             </article>
 
             {/* Parents & Teachers */}
-            <article className="flex flex-col rounded-2xl border border-emerald-100 bg-white/90 p-5 shadow-sm">
+            <article className="flex flex-col rounded-2xl border border-violet-200 bg-white/90 p-5 shadow-sm">
               <h3 className="text-lg font-semibold text-stone-900">
                 For Parents &amp; Teachers
               </h3>
@@ -351,7 +351,7 @@ export default function HomePage() {
               <div className="mt-4">
                 <Link
                   href="/parents-teachers"
-                  className="text-sm font-semibold text-emerald-800 underline decoration-emerald-400 underline-offset-4 hover:text-emerald-900"
+                  className="text-sm font-semibold text-violet-700 underline decoration-violet-400 underline-offset-4 hover:text-violet-800"
                 >
                   See the guide →
                 </Link>
@@ -364,7 +364,7 @@ export default function HomePage() {
       {/* Call to action / Book link */}
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-          <div className="rounded-3xl border border-amber-100 bg-amber-50/70 p-6 sm:p-8">
+          <div className="rounded-3xl border border-violet-200 bg-gradient-to-br from-violet-50 via-pink-50 to-cyan-50 p-6 sm:p-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="text-xl font-semibold text-stone-900 sm:text-2xl">
@@ -381,7 +381,7 @@ export default function HomePage() {
                   href="https://www.amazon.com/s?k=the+hyena+who+went+to+dinner&i=stripbooks-intl-ship&crid=1DQDFPI1HMPRQ&sprefix=the+hyena+who+went+to+dinner%2Cstripbooks-intl-ship%2C209&ref=nb_sb_noss"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-amber-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-amber-300/50 transition hover:bg-amber-700"
+                  className="inline-flex items-center justify-center rounded-full bg-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-violet-300/50 transition hover:bg-violet-700"
                 >
                   View the book on Amazon
                   <span aria-hidden className="ml-2">
@@ -410,7 +410,7 @@ export default function HomePage() {
                 href="https://habeshapress.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-300 underline underline-offset-2 hover:text-amber-200"
+                className="text-cyan-300 underline underline-offset-2 hover:text-cyan-200"
               >
                 Habesha Press
               </a>

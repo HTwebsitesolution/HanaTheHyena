@@ -59,9 +59,9 @@ export const metadata = {
 
 export default function PlayPage() {
   return (
-    <main className="min-h-screen bg-amber-50/40">
+    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-sky-50 to-purple-50/30">
       {/* Hero section */}
-      <section className="border-b border-amber-200 bg-gradient-to-b from-amber-50 to-amber-100/60">
+      <section className="border-b border-cyan-200 bg-gradient-to-b from-cyan-50 to-sky-100/60">
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:flex-row lg:items-center">
           <div className="flex-1">
             <h1 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
@@ -81,7 +81,7 @@ export default function PlayPage() {
 
           {/* Optional illustration placeholder */}
           <div className="flex-1">
-            <div className="mx-auto h-40 w-40 rounded-3xl bg-white/70 shadow-md shadow-amber-200/60 ring-1 ring-amber-100 sm:h-48 sm:w-48 lg:ml-auto">
+            <div className="mx-auto h-40 w-40 rounded-3xl bg-white/70 shadow-md shadow-cyan-200/60 ring-1 ring-cyan-100 sm:h-48 sm:w-48 lg:ml-auto">
               {/* Replace this with an actual Hana illustration */}
               <div className="flex h-full items-center justify-center text-sm text-stone-400">
                 Hana illustration
@@ -92,13 +92,13 @@ export default function PlayPage() {
       </section>
 
       {/* Activity Pack Featured Section */}
-      <section className="border-y border-amber-200 bg-gradient-to-br from-amber-100 via-amber-50 to-emerald-50">
+      <section className="border-y border-violet-200 bg-gradient-to-br from-violet-100 via-pink-50 to-cyan-50">
         <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <div className="mx-auto max-w-4xl">
-            <div className="rounded-3xl border-2 border-amber-300 bg-white p-8 shadow-xl shadow-amber-200/50 ring-1 ring-amber-100 sm:p-10">
+            <div className="rounded-3xl border-2 border-violet-300 bg-white p-8 shadow-xl shadow-violet-200/50 ring-1 ring-violet-100 sm:p-10">
               <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-8">
                 <div className="flex-1">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-amber-800">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-800">
                     <span>⭐</span>
                     <span>Complete Activity Pack</span>
                   </div>
@@ -141,7 +141,7 @@ export default function PlayPage() {
                       href="/activities/hana-activity-pack-all-in-one.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-amber-600/30 transition hover:bg-amber-700 hover:shadow-xl hover:shadow-amber-600/40"
+                      className="inline-flex items-center justify-center rounded-full bg-violet-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-violet-600/30 transition hover:bg-violet-700 hover:shadow-xl hover:shadow-violet-600/40"
                     >
                       Download Complete Pack
                       <span aria-hidden="true" className="ml-2 text-lg">
@@ -150,7 +150,7 @@ export default function PlayPage() {
                     </Link>
                     <Link
                       href="/parents-teachers"
-                      className="inline-flex items-center justify-center rounded-full border-2 border-amber-300 bg-white px-6 py-3 text-base font-semibold text-amber-700 transition hover:bg-amber-50"
+                      className="inline-flex items-center justify-center rounded-full border-2 border-violet-300 bg-white px-6 py-3 text-base font-semibold text-violet-700 transition hover:bg-violet-50"
                     >
                       For Teachers & Parents →
                     </Link>
@@ -160,7 +160,7 @@ export default function PlayPage() {
                   </p>
                 </div>
                 <div className="flex-shrink-0 lg:ml-4">
-                  <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-200 to-emerald-200 shadow-lg lg:h-40 lg:w-40">
+                  <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-300 via-pink-300 to-cyan-300 shadow-lg lg:h-40 lg:w-40">
                     <span className="text-4xl lg:text-5xl">📦</span>
                   </div>
                 </div>
@@ -187,14 +187,14 @@ export default function PlayPage() {
           {activities.map((activity) => (
             <article
               key={activity.id}
-              className="group flex flex-col rounded-2xl border border-amber-100 bg-white/90 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              className="group flex flex-col rounded-2xl border border-violet-100 bg-white/90 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                  <p className="inline-flex items-center rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-700">
                     {activity.badge}
                   </p>
-                  <h3 className="mt-3 text-lg font-semibold text-stone-900 group-hover:text-amber-700">
+                  <h3 className="mt-3 text-lg font-semibold text-stone-900 group-hover:text-violet-700">
                     {activity.title}
                   </h3>
                 </div>
@@ -209,7 +209,7 @@ export default function PlayPage() {
                   href={activity.pdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-amber-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-700"
+                  className="inline-flex items-center justify-center rounded-full bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-violet-700"
                 >
                   Download PDF
                   <span aria-hidden="true" className="ml-2">
@@ -225,15 +225,15 @@ export default function PlayPage() {
         </div>
 
         {/* Additional resources note */}
-        <div className="mt-10 rounded-2xl border border-emerald-100 bg-emerald-50/60 px-5 py-4 text-sm text-stone-800 sm:px-6">
-          <p className="font-semibold text-emerald-900">
+        <div className="mt-10 rounded-2xl border border-cyan-100 bg-cyan-50/60 px-5 py-4 text-sm text-stone-800 sm:px-6">
+          <p className="font-semibold text-cyan-900">
             Looking for more resources?
           </p>
           <p className="mt-2">
             Visit our{" "}
             <Link
               href="/parents-teachers"
-              className="font-semibold text-emerald-800 underline decoration-emerald-400 underline-offset-2 hover:text-emerald-900"
+              className="font-semibold text-cyan-800 underline decoration-cyan-400 underline-offset-2 hover:text-cyan-900"
             >
               Parents & Teachers page
             </Link>{" "}

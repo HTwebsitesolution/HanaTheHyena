@@ -72,9 +72,9 @@ const questions = [
 
 export default function ParentsTeachersPage() {
   return (
-    <main className="min-h-screen bg-amber-50/40">
+    <main className="min-h-screen bg-gradient-to-b from-purple-50 via-pink-50/30 to-cyan-50/40">
       {/* Hero */}
-      <section className="border-b border-amber-200 bg-gradient-to-b from-amber-50 to-amber-100/60">
+      <section className="border-b border-purple-200 bg-gradient-to-b from-purple-50 to-pink-100/60">
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:flex-row lg:items-center">
           <div className="flex-1">
             <h1 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
@@ -94,8 +94,8 @@ export default function ParentsTeachersPage() {
 
           {/* Optional side card */}
           <div className="flex-1">
-            <div className="mx-auto max-w-sm rounded-2xl bg-white/90 p-5 shadow-md shadow-amber-200/70 ring-1 ring-amber-100 lg:ml-auto">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-amber-700">
+            <div className="mx-auto max-w-sm rounded-2xl bg-white/90 p-5 shadow-md shadow-purple-200/70 ring-1 ring-purple-100 lg:ml-auto">
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-purple-700">
                 Quick downloads
               </h2>
               <ul className="mt-3 space-y-2 text-sm text-stone-800">
@@ -104,7 +104,7 @@ export default function ParentsTeachersPage() {
                     href="/activities/hana-activity-pack-all-in-one.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline decoration-amber-400 underline-offset-2 hover:text-amber-700"
+                    className="underline decoration-purple-400 underline-offset-2 hover:text-purple-700"
                   >
                     Hana Activity Pack (all printable pages)
                   </Link>
@@ -114,7 +114,7 @@ export default function ParentsTeachersPage() {
                     href="/activities/hana-discussion-guide.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline decoration-amber-400 underline-offset-2 hover:text-amber-700"
+                    className="underline decoration-purple-400 underline-offset-2 hover:text-purple-700"
                   >
                     One-page discussion guide
                   </Link>
@@ -122,7 +122,7 @@ export default function ParentsTeachersPage() {
                 <li>
                   <Link
                     href="/play"
-                    className="underline decoration-amber-400 underline-offset-2 hover:text-amber-700"
+                    className="underline decoration-purple-400 underline-offset-2 hover:text-purple-700"
                   >
                     View activities online
                   </Link>
@@ -153,7 +153,7 @@ export default function ParentsTeachersPage() {
           {themes.map((theme) => (
             <article
               key={theme.title}
-              className="rounded-2xl border border-amber-100 bg-white/90 p-5 shadow-sm"
+              className="rounded-2xl border border-pink-200 bg-white/90 p-5 shadow-sm"
             >
               <h3 className="text-lg font-semibold text-stone-900">
                 {theme.title}
@@ -165,7 +165,7 @@ export default function ParentsTeachersPage() {
       </section>
 
       {/* Discussion questions */}
-      <section className="border-y border-emerald-100 bg-emerald-50/50">
+      <section className="border-y border-cyan-100 bg-cyan-50/50">
         <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
           <header className="max-w-3xl">
             <h2 className="text-2xl font-semibold text-stone-900 sm:text-3xl">
@@ -182,15 +182,15 @@ export default function ParentsTeachersPage() {
             {questions.map((block) => (
               <article
                 key={block.heading}
-                className="rounded-2xl bg-white/90 p-5 shadow-sm ring-1 ring-emerald-50"
+                className="rounded-2xl bg-white/90 p-5 shadow-sm ring-1 ring-cyan-50"
               >
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-800">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-cyan-800">
                   {block.heading}
                 </h3>
                 <ul className="mt-3 space-y-2 text-sm text-stone-800">
                   {block.items.map((q) => (
                     <li key={q} className="flex gap-2">
-                      <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-emerald-600" />
+                      <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-cyan-600" />
                       <span>{q}</span>
                     </li>
                   ))}
@@ -215,7 +215,7 @@ export default function ParentsTeachersPage() {
         </header>
 
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <article className="rounded-2xl border border-amber-100 bg-white/90 p-5 shadow-sm">
+          <article className="rounded-2xl border border-violet-200 bg-white/90 p-5 shadow-sm">
             <h3 className="text-lg font-semibold text-stone-900">
               Food &amp; Feelings Chart
             </h3>
@@ -227,7 +227,7 @@ export default function ParentsTeachersPage() {
             </p>
           </article>
 
-          <article className="rounded-2xl border border-amber-100 bg-white/90 p-5 shadow-sm">
+          <article className="rounded-2xl border border-pink-200 bg-white/90 p-5 shadow-sm">
             <h3 className="text-lg font-semibold text-stone-900">
               Map Hana's Journey
             </h3>
@@ -239,7 +239,7 @@ export default function ParentsTeachersPage() {
             </p>
           </article>
 
-          <article className="rounded-2xl border border-amber-100 bg-white/90 p-5 shadow-sm">
+          <article className="rounded-2xl border border-cyan-200 bg-white/90 p-5 shadow-sm">
             <h3 className="text-lg font-semibold text-stone-900">
               Hospitality role-play
             </h3>
@@ -251,7 +251,7 @@ export default function ParentsTeachersPage() {
             </p>
           </article>
 
-          <article className="rounded-2xl border border-amber-100 bg-white/90 p-5 shadow-sm">
+          <article className="rounded-2xl border border-purple-200 bg-white/90 p-5 shadow-sm">
             <h3 className="text-lg font-semibold text-stone-900">
               Postcard from Hana
             </h3>
@@ -269,7 +269,7 @@ export default function ParentsTeachersPage() {
             share classroom displays or children's work, you can email{" "}
             <a
               href="mailto:hello@habeshapress.com"
-              className="font-semibold text-amber-300 underline underline-offset-2 hover:text-amber-200"
+              className="font-semibold text-cyan-300 underline underline-offset-2 hover:text-cyan-200"
             >
               hello@habeshapress.com
             </a>{" "}
