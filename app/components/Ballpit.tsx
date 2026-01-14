@@ -28,14 +28,14 @@ import { RoomEnvironment as z } from 'three/examples/jsm/environments/RoomEnviro
 class x {
   #e: any;
   canvas: HTMLCanvasElement | null = null;
-  camera: t;
+  camera!: t;
   cameraMinAspect: number | undefined;
   cameraMaxAspect: number | undefined;
-  cameraFov: number;
+  cameraFov!: number;
   maxPixelRatio: number | undefined;
   minPixelRatio: number | undefined;
-  scene: i;
-  renderer: s;
+  scene!: i;
+  renderer!: s;
   #t: any;
   size = { width: 0, height: 0, wWidth: 0, wHeight: 0, ratio: 0, pixelRatio: 0 };
   render = this.#i;
