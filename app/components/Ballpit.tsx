@@ -2,8 +2,9 @@
 
 import { useRef, useEffect } from 'react';
 import {
-  Clock as e,
+  Clock,
   PerspectiveCamera as t,
+  Camera,
   Scene as i,
   WebGLRenderer as s,
   SRGBColorSpace as n,
@@ -28,7 +29,7 @@ import { RoomEnvironment as z } from 'three/examples/jsm/environments/RoomEnviro
 class x {
   #e: any;
   canvas: HTMLCanvasElement | null = null;
-  camera!: t;
+  camera!: Camera;
   cameraMinAspect: number | undefined;
   cameraMaxAspect: number | undefined;
   cameraFov!: number;
@@ -39,20 +40,21 @@ class x {
   #t: any;
   size = { width: 0, height: 0, wWidth: 0, wHeight: 0, ratio: 0, pixelRatio: 0 };
   render = this.#i;
-  onBeforeRender = () => {};
-  onAfterRender = () => {};
-  onAfterResize = () => {};
+  onBeforeRender = (_: any) => {};
+  onAfterRender = (_: any) => {};
+  onAfterResize = (_: any) => {};
   #s = false;
   #n = false;
   isDisposed = false;
   #o: IntersectionObserver | null = null;
   #r: ResizeObserver | null = null;
   #a: NodeJS.Timeout | null = null;
-  #c = new e();
+  #c: Clock;
   #h = { elapsed: 0, delta: 0 };
   #l: number | undefined;
   constructor(e: any) {
     this.#e = { ...e };
+    this.#c = new Clock();
     this.#m();
     this.#d();
     this.#p();
@@ -61,7 +63,7 @@ class x {
   }
   #m() {
     this.camera = new t();
-    this.cameraFov = this.camera.fov;
+    this.cameraFov = (this.camera as t).fov;
   }
   #d() {
     this.scene = new i();
@@ -70,9 +72,12 @@ class x {
     if (this.#e.canvas) {
       this.canvas = this.#e.canvas;
     } else if (this.#e.id) {
-      this.canvas = document.getElementById(this.#e.id);
+      this.canvas = document.getElementById(this.#e.id) as HTMLCanvasElement | null;
     } else {
       console.error('Three: Missing canvas or id parameter');
+    }
+    if (!this.canvas) {
+      throw new Error('Canvas element is required');
     }
     this.canvas.style.display = 'block';
     const e = {
@@ -86,9 +91,9 @@ class x {
   #g() {
     if (!(this.#e.size instanceof Object)) {
       window.addEventListener('resize', this.#f.bind(this));
-      if (this.#e.size === 'parent' && this.canvas.parentNode) {
+      if (this.#e.size === 'parent' && this.canvas!.parentNode) {
         this.#r = new ResizeObserver(this.#f.bind(this));
-        this.#r.observe(this.canvas.parentNode);
+        this.#r.observe(this.canvas!.parentNode as Element);
       }
     }
     this.#o = new IntersectionObserver(this.#u.bind(this), {
@@ -96,7 +101,7 @@ class x {
       rootMargin: '0px',
       threshold: 0
     });
-    this.#o.observe(this.canvas);
+    this.#o.observe(this.canvas!);
     document.addEventListener('visibilitychange', this.#v.bind(this));
   }
   #y() {
@@ -105,7 +110,7 @@ class x {
     this.#o?.disconnect();
     document.removeEventListener('visibilitychange', this.#v.bind(this));
   }
-  #u(e) {
+  #u(e: IntersectionObserverEntry[]) {
     this.#s = e[0].isIntersecting;
     this.#s ? this.#w() : this.#z();
   }
@@ -123,9 +128,10 @@ class x {
     if (this.#e.size instanceof Object) {
       e = this.#e.size.width;
       t = this.#e.size.height;
-    } else if (this.#e.size === 'parent' && this.canvas.parentNode) {
-      e = this.canvas.parentNode.offsetWidth;
-      t = this.canvas.parentNode.offsetHeight;
+    } else if (this.#e.size === 'parent' && this.canvas!.parentNode) {
+      const parent = this.canvas!.parentNode as HTMLElement;
+      e = parent.offsetWidth;
+      t = parent.offsetHeight;
     } else {
       e = window.innerWidth;
       t = window.innerHeight;
@@ -138,31 +144,35 @@ class x {
     this.onAfterResize(this.size);
   }
   #x() {
-    this.camera.aspect = this.size.width / this.size.height;
-    if (this.camera.isPerspectiveCamera && this.cameraFov) {
-      if (this.cameraMinAspect && this.camera.aspect < this.cameraMinAspect) {
+    const cam = this.camera as t;
+    cam.aspect = this.size.width / this.size.height;
+    if (cam.isPerspectiveCamera && this.cameraFov) {
+      if (this.cameraMinAspect && cam.aspect < this.cameraMinAspect) {
         this.#A(this.cameraMinAspect);
-      } else if (this.cameraMaxAspect && this.camera.aspect > this.cameraMaxAspect) {
+      } else if (this.cameraMaxAspect && cam.aspect > this.cameraMaxAspect) {
         this.#A(this.cameraMaxAspect);
       } else {
-        this.camera.fov = this.cameraFov;
+        cam.fov = this.cameraFov;
       }
     }
-    this.camera.updateProjectionMatrix();
+    cam.updateProjectionMatrix();
     this.updateWorldSize();
   }
-  #A(e) {
-    const t = Math.tan(o.degToRad(this.cameraFov / 2)) / (this.camera.aspect / e);
-    this.camera.fov = 2 * o.radToDeg(Math.atan(t));
+  #A(e: number) {
+    const cam = this.camera as t;
+    const t_val = Math.tan(o.degToRad(this.cameraFov! / 2)) / (cam.aspect / e);
+    cam.fov = 2 * o.radToDeg(Math.atan(t_val));
   }
   updateWorldSize() {
-    if (this.camera.isPerspectiveCamera) {
-      const e = (this.camera.fov * Math.PI) / 180;
-      this.size.wHeight = 2 * Math.tan(e / 2) * this.camera.position.length();
-      this.size.wWidth = this.size.wHeight * this.camera.aspect;
-    } else if (this.camera.isOrthographicCamera) {
-      this.size.wHeight = this.camera.top - this.camera.bottom;
-      this.size.wWidth = this.camera.right - this.camera.left;
+    if ((this.camera as any).isPerspectiveCamera) {
+      const cam = this.camera as t;
+      const e = (cam.fov * Math.PI) / 180;
+      this.size.wHeight = 2 * Math.tan(e / 2) * cam.position.length();
+      this.size.wWidth = this.size.wHeight * cam.aspect;
+    } else if ((this.camera as any).isOrthographicCamera) {
+      const cam = this.camera as any;
+      this.size.wHeight = cam.top - cam.bottom;
+      this.size.wWidth = cam.right - cam.left;
     }
   }
   #b() {
@@ -199,7 +209,7 @@ class x {
     animate();
   }
   #z() {
-    if (this.#n) {
+    if (this.#n && this.#l !== undefined) {
       cancelAnimationFrame(this.#l);
       this.#n = false;
       this.#c.stop();
@@ -209,7 +219,7 @@ class x {
     this.renderer.render(this.scene, this.camera);
   }
   clear() {
-    this.scene.traverse(e => {
+    this.scene.traverse((e: any) => {
       if (e.isMesh && typeof e.material === 'object' && e.material !== null) {
         Object.keys(e.material).forEach(t => {
           const i = e.material[t];
@@ -390,7 +400,7 @@ function P(e: any, t: any) {
   s.x = (i.x / t.width) * 2 - 1;
   s.y = (-i.y / t.height) * 2 + 1;
 }
-function D(e) {
+function D(e: DOMRect) {
   const { x: t, y: i } = A;
   const { left: s, top: n, width: o, height: r } = e;
   return t >= s && t <= s + o && i >= n && i <= n + r;
@@ -409,6 +419,11 @@ const H = new a();
 const T = new a();
 
 class W {
+  config: any;
+  positionData: Float32Array;
+  velocityData: Float32Array;
+  sizeData: Float32Array;
+  center: a;
   constructor(e: any) {
     this.config = e;
     this.positionData = new Float32Array(3 * e.count).fill(0);
@@ -428,14 +443,14 @@ class W {
       t[s + 2] = E(2 * e.maxZ);
     }
   }
-  setSizes() {
+  setSizes(): void {
     const { config: e, sizeData: t } = this;
     t[0] = e.size0;
     for (let i = 1; i < e.count; i++) {
       t[i] = k(e.minSize, e.maxSize);
     }
   }
-  update(e) {
+  update(e: { delta: number }) {
     const { config: t, center: i, positionData: s, sizeData: n, velocityData: o } = this;
     let r = 0;
     if (t.controlSphere0) {
@@ -522,6 +537,8 @@ class W {
 }
 
 class Y extends c {
+  uniforms: any;
+  onBeforeCompile2: any;
   constructor(e: any) {
     super(e);
     this.uniforms = {
@@ -531,8 +548,10 @@ class Y extends c {
       thicknessPower: { value: 2 },
       thicknessScale: { value: 10 }
     };
-    this.defines.USE_UV = '';
-    this.onBeforeCompile = e => {
+    if (this.defines) {
+      this.defines.USE_UV = '';
+    }
+    this.onBeforeCompile = (e: any) => {
       Object.assign(e.uniforms, this.uniforms);
       e.fragmentShader =
         '\n        uniform float thicknessPower;\n        uniform float thicknessScale;\n        uniform float thicknessDistortion;\n        uniform float thicknessAmbient;\n        uniform float thicknessAttenuation;\n      ' +
@@ -580,10 +599,14 @@ const X = {
 const U = new m();
 
 class Z extends d {
+  config: any;
+  physics!: W;
+  ambientLight!: f;
+  light!: u;
   constructor(e: any, t: any = {}) {
     const i = { ...X, ...t };
     const s = new z();
-    const n = new p(e, 0.04).fromScene(s).texture;
+    const n = new p(e).fromScene(s, 0.04).texture;
     const o = new g();
     const r = new Y({ envMap: n, ...i.materialParams });
     r.envMapRotation.x = -Math.PI / 2;
@@ -599,21 +622,21 @@ class Z extends d {
     this.light = new u(this.config.colors[0], this.config.lightIntensity);
     this.add(this.light);
   }
-  setColors(e) {
+  setColors(e: any) {
     if (Array.isArray(e) && e.length > 1) {
-      const t = (function (e) {
-        let t, i;
-        function setColors(e) {
+      const t = (function (e: any) {
+        let t: any, i: l[] = [];
+        function setColors(e: any) {
           t = e;
           i = [];
-          t.forEach(col => {
+          t.forEach((col: any) => {
             i.push(new l(col));
           });
         }
         setColors(e);
         return {
           setColors,
-          getColorAt: function (ratio, out = new l()) {
+          getColorAt: function (ratio: number, out: l = new l()) {
             const scaled = Math.max(0, Math.min(1, ratio)) * (t.length - 1);
             const idx = Math.floor(scaled);
             const start = i[idx];
@@ -633,10 +656,12 @@ class Z extends d {
           this.light.color.copy(t.getColorAt(idx / this.count));
         }
       }
-      this.instanceColor.needsUpdate = true;
+      if (this.instanceColor) {
+        this.instanceColor.needsUpdate = true;
+      }
     }
   }
-  update(e) {
+  update(e: { delta: number }) {
     this.physics.update(e);
     for (let idx = 0; idx < this.count; idx++) {
       U.position.fromArray(this.physics.positionData, 3 * idx);
@@ -659,10 +684,10 @@ function createBallpit(e: HTMLCanvasElement, t: any = {}) {
     size: 'parent',
     rendererOptions: { antialias: true, alpha: true }
   });
-  let s;
+  let s: Z | undefined;
   i.renderer.toneMapping = v;
-  i.camera.position.set(0, 0, 20);
-  i.camera.lookAt(0, 0, 0);
+  (i.camera as t).position.set(0, 0, 20);
+  (i.camera as t).lookAt(0, 0, 0);
   i.cameraMaxAspect = 1.5;
   i.resize();
   initialize(t);
@@ -678,17 +703,18 @@ function createBallpit(e: HTMLCanvasElement, t: any = {}) {
   const h = S({
     domElement: e,
     onMove() {
+      if (!s) return;
       n.setFromCamera(h.nPosition, i.camera);
-      i.camera.getWorldDirection(o.normal);
+      (i.camera as t).getWorldDirection(o.normal);
       n.ray.intersectPlane(o, r);
       s.physics.center.copy(r);
       s.config.controlSphere0 = true;
     },
     onLeave() {
-      s.config.controlSphere0 = false;
+      if (s) s.config.controlSphere0 = false;
     }
   });
-  function initialize(e) {
+  function initialize(e: any) {
     if (s) {
       i.clear();
       i.scene.remove(s);
@@ -696,20 +722,22 @@ function createBallpit(e: HTMLCanvasElement, t: any = {}) {
     s = new Z(i.renderer, e);
     i.scene.add(s);
   }
-  i.onBeforeRender = e => {
-    if (!c) s.update(e);
+  i.onBeforeRender = (e: any) => {
+    if (!c && s) s.update(e);
   };
-  i.onAfterResize = e => {
-    s.config.maxX = e.wWidth / 2;
-    s.config.maxY = e.wHeight / 2;
+  i.onAfterResize = (e: any) => {
+    if (s) {
+      s.config.maxX = e.wWidth / 2;
+      s.config.maxY = e.wHeight / 2;
+    }
   };
   return {
     three: i,
     get spheres() {
       return s;
     },
-    setCount(e) {
-      initialize({ ...s.config, count: e });
+    setCount(e: number) {
+      if (s) initialize({ ...s.config, count: e });
     },
     togglePause() {
       c = !c;
