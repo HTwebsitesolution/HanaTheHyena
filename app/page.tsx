@@ -74,7 +74,14 @@ export default function HomePage() {
               className="group relative rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-orange-400/50 transition-all hover:scale-110 hover:shadow-xl hover:shadow-orange-400/70"
             >
               <span className="relative z-10 flex items-center gap-2 text-lg">
-                🦁 Meet Hana
+                <Image
+                  src="/HanaTheHyena website inside logo.png"
+                  alt="Hana"
+                  width={24}
+                  height={24}
+                  className="h-6 w-6 object-contain"
+                />
+                Meet Hana
               </span>
             </Link>
             <Link
@@ -325,59 +332,86 @@ export default function HomePage() {
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {/* Meet Hana */}
-            <article className="flex flex-col rounded-2xl border border-orange-200 bg-white/90 p-5 shadow-sm">
-              <h3 className="text-lg font-semibold text-stone-900">
-                Meet Hana
-              </h3>
-              <p className="mt-2 text-sm text-stone-700">
-                Find out who Hana is, what she dreams about, and why she decides
-                to leave Harar for the bright lights of Addis Ababa.
-              </p>
-              <div className="mt-4">
+            <article className="group relative flex flex-col overflow-hidden rounded-3xl border-2 border-orange-200/80 bg-gradient-to-br from-orange-50 via-amber-50/50 to-white p-6 shadow-lg shadow-orange-200/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-300/50 animate-slide-up">
+              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-orange-200/40 to-amber-200/40 blur-2xl transition-all duration-500 group-hover:scale-150" />
+              <div className="relative z-10">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-amber-500 p-2 shadow-lg shadow-orange-300/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    <Image
+                      src="/HanaTheHyena website inside logo.png"
+                      alt="Hana"
+                      width={32}
+                      height={32}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-900">
+                    Meet Hana
+                  </h3>
+                </div>
+                <p className="mb-6 text-sm leading-relaxed text-stone-700">
+                  Find out who Hana is, what she dreams about, and why she decides
+                  to leave Harar for the bright lights of Addis Ababa.
+                </p>
                 <Link
                   href="/meet-hana"
-                  className="text-sm font-semibold text-orange-700 underline decoration-orange-400 underline-offset-4 hover:text-orange-800"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-orange-300/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-400/60"
                 >
-                  Meet Hana →
+                  Meet Hana
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
               </div>
             </article>
 
             {/* Play & Activities */}
-            <article className="flex flex-col rounded-2xl border border-sky-200 bg-white/90 p-5 shadow-sm">
-              <h3 className="text-lg font-semibold text-stone-900">
-                Play &amp; Activities
-              </h3>
-              <p className="mt-2 text-sm text-stone-700">
-                Download free colouring pages, puzzles, and creative worksheets
-                based on Hana&apos;s journey from Harar to Addis Ababa.
-              </p>
-              <div className="mt-4">
+            <article className="group relative flex flex-col overflow-hidden rounded-3xl border-2 border-sky-200/80 bg-gradient-to-br from-sky-50 via-blue-50/50 to-white p-6 shadow-lg shadow-sky-200/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-sky-300/50 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-sky-200/40 to-blue-200/40 blur-2xl transition-all duration-500 group-hover:scale-150" />
+              <div className="relative z-10">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 text-2xl shadow-lg shadow-sky-300/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    🎨
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-900">
+                    Play &amp; Activities
+                  </h3>
+                </div>
+                <p className="mb-6 text-sm leading-relaxed text-stone-700">
+                  Download free colouring pages, puzzles, and creative worksheets
+                  based on Hana&apos;s journey from Harar to Addis Ababa.
+                </p>
                 <Link
                   href="/play"
-                  className="text-sm font-semibold text-sky-700 underline decoration-sky-400 underline-offset-4 hover:text-sky-800"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-sky-300/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-sky-400/60"
                 >
-                  Visit the play page →
+                  Visit the play page
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
               </div>
             </article>
 
             {/* Parents & Teachers */}
-            <article className="flex flex-col rounded-2xl border border-green-200 bg-white/90 p-5 shadow-sm">
-              <h3 className="text-lg font-semibold text-stone-900">
-                For Parents &amp; Teachers
-              </h3>
-              <p className="mt-2 text-sm text-stone-700">
-                Access a one-page discussion guide, theme ideas, and simple
-                activities to support learning about courage, belonging, and
-                Ethiopian culture.
-              </p>
-              <div className="mt-4">
+            <article className="group relative flex flex-col overflow-hidden rounded-3xl border-2 border-green-200/80 bg-gradient-to-br from-green-50 via-emerald-50/50 to-white p-6 shadow-lg shadow-green-200/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-300/50 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-green-200/40 to-emerald-200/40 blur-2xl transition-all duration-500 group-hover:scale-150" />
+              <div className="relative z-10">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 text-2xl shadow-lg shadow-green-300/50 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    👩‍🏫
+                  </div>
+                  <h3 className="text-xl font-bold text-stone-900">
+                    For Parents &amp; Teachers
+                  </h3>
+                </div>
+                <p className="mb-6 text-sm leading-relaxed text-stone-700">
+                  Access a one-page discussion guide, theme ideas, and simple
+                  activities to support learning about courage, belonging, and
+                  Ethiopian culture.
+                </p>
                 <Link
                   href="/parents-teachers"
-                  className="text-sm font-semibold text-green-700 underline decoration-green-400 underline-offset-4 hover:text-green-800"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-green-300/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-400/60"
                 >
-                  See the guide →
+                  See the guide
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
               </div>
             </article>

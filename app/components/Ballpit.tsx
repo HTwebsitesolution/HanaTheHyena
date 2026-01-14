@@ -753,18 +753,40 @@ const Ballpit: React.FC<BallpitProps> = ({
     if (!canvas) return;
 
     const defaultColors = colors || [
-      0xf472b6, // pink
-      0xa78bfa, // violet
-      0x60a5fa, // sky blue
-      0x34d399, // emerald
-      0xfbbf24, // amber
-      0xfb7185, // rose
-      0x818cf8, // indigo
-      0xec4899, // fuchsia
-      0x8b5cf6, // purple
-      0x06b6d4, // cyan
-      0x10b981, // green
-      0xf59e0b, // orange
+      // Greens (savanna/nature)
+      0x22c55e, // green-500
+      0x16a34a, // green-600
+      0x15803d, // green-700
+      0x166534, // green-800
+      0x34d399, // emerald-400
+      0x10b981, // emerald-500
+      0x059669, // emerald-600
+      0x84cc16, // lime-500
+      0x65a30d, // lime-600
+      0x4ade80, // green-400
+      // Blues/Sky (sky)
+      0x0ea5e9, // sky-500
+      0x0284c7, // sky-600
+      0x60a5fa, // sky-400
+      0x3b82f6, // blue-500
+      0x2563eb, // blue-600
+      0x06b6d4, // cyan-500
+      0x0891b2, // cyan-600
+      0x38bdf8, // sky-300
+      // Oranges/Amber (warm city colors)
+      0xf97316, // orange-500
+      0xea580c, // orange-600
+      0xc2410c, // orange-700
+      0xf59e0b, // amber-500
+      0xfbbf24, // amber-400
+      0xd97706, // amber-600
+      0xfbbf24, // amber-400
+      // Earthy tones
+      0xa16207, // amber-700 (earthy)
+      0x92400e, // amber-800 (earthy)
+      0x78716c, // stone-500 (earthy)
+      0x57534e, // stone-600 (earthy)
+      0x65a30d, // lime-600 (earthy green)
     ];
 
     spheresInstanceRef.current = createBallpit(canvas, { 
