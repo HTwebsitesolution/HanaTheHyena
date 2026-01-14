@@ -140,7 +140,6 @@ export default function MeetHanaPage() {
             <div className="flex justify-center mt-8 lg:mt-0">
               <div className="relative h-64 w-64 sm:h-72 sm:w-72 rounded-[32px] bg-slate-900/70 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.7)]">
                 <div className="relative h-full w-full overflow-hidden rounded-[28px] bg-gradient-to-br from-pink-900/40 via-violet-900/40 to-cyan-900/40 flex items-center justify-center">
-                  {/* Placeholder for Hana portrait - using logo as fallback */}
                   <Image
                     src="/HanaTheHyena website inside logo.png"
                     alt="Illustration of Hana the Hyena"
@@ -148,9 +147,6 @@ export default function MeetHanaPage() {
                     height={200}
                     className="object-contain p-4"
                   />
-                  <p className="absolute bottom-2 text-xs text-slate-400/60">
-                    Hana portrait coming soon
-                  </p>
                 </div>
               </div>
             </div>
@@ -220,20 +216,14 @@ export default function MeetHanaPage() {
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="rounded-2xl bg-slate-950/70 p-6 border border-slate-800 shadow-lg">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🏛️</div>
-                  <h3 className="text-lg font-semibold text-cyan-300 mb-2">
-                    Harar, Ethiopia
-                  </h3>
-                  <p className="text-sm text-slate-300/80">
-                    Ancient walled city · UNESCO World Heritage Site · Home to
-                    Hana and her hyena family
-                  </p>
-                  <p className="mt-4 text-xs text-slate-400 italic">
-                    Map illustration coming soon
-                  </p>
-                </div>
+              <div className="rounded-2xl bg-slate-950/70 p-6 border border-slate-800 shadow-lg overflow-hidden">
+                <Image
+                  src="/activities/Ancient walled city · UNESCO World Heritage Site · Home to Hana and her hyena family.png"
+                  alt="Harar, Ethiopia - Ancient walled city, UNESCO World Heritage Site, Home to Hana and her hyena family"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-lg"
+                />
               </div>
             </div>
           </div>

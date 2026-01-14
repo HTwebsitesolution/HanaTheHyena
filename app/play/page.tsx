@@ -172,11 +172,15 @@ export default function PlayPage() {
                 </a>
               </div>
             </div>
-            {/* Optional thumbnail image */}
-            <div className="w-full md:w-40 h-40 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-xs text-slate-400 text-center px-4">
-              Activity Pack cover art
-              <br />
-              (swap this box for a real image later)
+            {/* Activity Pack cover image */}
+            <div className="w-full md:w-40 h-40 rounded-xl border border-slate-700 overflow-hidden bg-slate-900 flex items-center justify-center">
+              <Image
+                src="/activities/Hana The Hyena - Activity pack front cover.png"
+                alt="Hana the Hyena Activity Pack Cover"
+                width={160}
+                height={160}
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>
