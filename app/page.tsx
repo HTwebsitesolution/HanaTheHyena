@@ -223,8 +223,8 @@ export default function HomePage() {
 
       {/* About the Book */}
       <section className="border-b border-violet-100 bg-white/90">
-        <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-[1.4fr,1fr] lg:items-start">
+        <div className="mx-auto w-full px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr,auto,1fr] lg:items-center">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-stone-900 sm:text-3xl">
                 About the book
@@ -243,6 +243,26 @@ export default function HomePage() {
                 own traditions too, she learns that even when we are different,
                 we can still belong.
               </p>
+            </div>
+
+            {/* Book Cover - Middle Column */}
+            <div className="flex items-center justify-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
+                <div className="relative animate-book-float" style={{ backgroundColor: 'transparent' }}>
+                  <Image
+                    src="/The Hyena Who Went To Dinner - 3D cover.png"
+                    alt="The Hyena Who Went To Dinner book cover"
+                    width={360}
+                    height={540}
+                    className="w-full h-auto transition-transform hover:scale-105"
+                    style={{
+                      backgroundColor: 'transparent',
+                      filter: 'drop-shadow(0 25px 50px -12px rgba(0, 0, 0, 0.25))',
+                    }}
+                    priority={false}
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="space-y-4 rounded-2xl border border-violet-100 bg-violet-50/60 p-5 text-sm text-stone-800">

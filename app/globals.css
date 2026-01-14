@@ -109,4 +109,24 @@
     min-height: 44px;
     min-width: 44px;
   }
+
+  /* Book floating animation with subtle rotation */
+  @keyframes book-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    25% { 
+      transform: translateY(-8px) rotate(-1deg); 
+    }
+    50% { 
+      transform: translateY(-12px) rotate(0deg); 
+    }
+    75% { 
+      transform: translateY(-8px) rotate(1deg); 
+    }
+  }
+
+  .animate-book-float {
+    animation: book-float 4s ease-in-out infinite;
+  }
 }
