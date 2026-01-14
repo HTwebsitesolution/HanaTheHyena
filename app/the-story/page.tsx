@@ -306,31 +306,6 @@ export default function TheStoryPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800 bg-slate-950">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-stone-300 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <div>
-            <p className="font-semibold text-stone-100">
-              Hana the Hyena · The Hyena Who Went To Dinner
-            </p>
-            <p className="mt-1 text-[11px] text-stone-400">
-              Created by Joseph Afolabi &amp; Feven Teshome. Published by{" "}
-              <a
-                href="https://habeshapress.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-300 underline underline-offset-2 hover:text-cyan-200"
-              >
-                Habesha Press
-              </a>
-              .
-            </p>
-          </div>
-          <div className="text-[11px] text-stone-500">
-            © {new Date().getFullYear()} Habesha Press. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
