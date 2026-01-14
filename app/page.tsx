@@ -1,6 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import MobileMenu from "./components/MobileMenu";
+
+const WhereIsHana = dynamic(() => import("./components/WhereIsHana"), {
+  ssr: false,
+  loading: () => (
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-sky-900 via-sky-950 to-slate-950">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Where is Hana?
+          </h2>
+        </div>
+      </div>
+    </section>
+  ),
+});
 
 export const metadata = {
   title: "Hana the Hyena – The Hyena Who Went To Dinner | Official Site",
@@ -348,6 +364,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Where is Hana / ballpit mini-game */}
+      <WhereIsHana />
 
       {/* Call to action / Book link */}
       <section className="bg-white">
