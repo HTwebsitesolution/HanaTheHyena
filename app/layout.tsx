@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   title: "Hana the Hyena",
   description: "An Ethiopian adventure about courage, friendship, and food.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
