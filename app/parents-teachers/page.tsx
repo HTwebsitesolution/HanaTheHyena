@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "For Parents & Teachers | Hana the Hyena",
@@ -6,278 +7,187 @@ export const metadata = {
     "Discussion questions, curriculum links, and free printable resources to use The Hyena Who Went To Dinner at home or in the classroom.",
 };
 
-const themes = [
-  {
-    title: "Belonging & Inclusion",
-    body: "Hana feels small and invisible in the big city until one family notices her, smiles, and invites her in. Her story opens a gentle way to talk about what it feels like to be new, left out, or different—and how small acts of kindness can change that.",
-  },
-  {
-    title: "Courage",
-    body: "From leaving Harar to stepping into a stranger's home for dinner, Hana keeps saying yes, even when she isn't sure what will happen next. Children can explore what everyday courage looks like in their own lives.",
-  },
-  {
-    title: "Hospitality & Food",
-    body: "The shared meal is at the heart of the story. Hana tries new dishes, and the family learns about her way of eating. The book naturally invites conversations about family traditions, favourite foods, and welcoming guests.",
-  },
-  {
-    title: "Cultural Curiosity",
-    body: "The story introduces real places in Ethiopia—Harar and Addis Ababa—and real dishes such as injera, doro wat, and gomen besiga. It can support geography topics, global citizenship, and multicultural book corners.",
-  },
-];
-
-const questions = [
-  {
-    heading: "Before reading",
-    items: [
-      "Have you ever visited a place that felt much bigger or busier than where you live now? How did it feel at first?",
-      "Look at the cover. What do you think Hana might be feeling about her trip to Addis Ababa?",
-    ],
-  },
-  {
-    heading: "Arriving in Addis",
-    items: [
-      "Why does Hana feel small and out of place when she first arrives in the city?",
-      "Have you ever felt like that somewhere new (a new class, club, school, or country)?",
-    ],
-  },
-  {
-    heading: "The dinner invitation",
-    items: [
-      "What kind things does the family do to help Hana feel welcome?",
-      "Why might it feel brave to say yes to their invitation?",
-    ],
-  },
-  {
-    heading: "Trying new food",
-    items: [
-      "What new foods does Hana see on the table? Which one would you like to taste?",
-      "Can you think of a time you tried a new food? What did you think before and after you tasted it?",
-    ],
-  },
-  {
-    heading: "Sharing her own tradition",
-    items: [
-      "Why is the piece of raw meat a special gift from Hana's point of view?",
-      "How does the family respond respectfully, even though they eat differently?",
-    ],
-  },
-  {
-    heading: "Coming home again",
-    items: [
-      "What do you think Hana will tell the other hyenas when she gets back to Harar?",
-      "What has she learned about herself, and what have the people in Addis learned from her?",
-    ],
-  },
-];
-
 export default function ParentsTeachersPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-purple-50 via-pink-50/30 to-cyan-50/40">
-      {/* Hero */}
-      <section className="border-b border-purple-200 bg-gradient-to-b from-purple-50 to-pink-100/60">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:flex-row lg:items-center">
-          <div className="flex-1">
-            <h1 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-              For Parents &amp; Teachers
-            </h1>
-            <p className="mt-4 text-lg text-stone-700">
-              <em>The Hyena Who Went To Dinner</em> opens up conversations
-              about courage, kindness, and belonging, while gently introducing
-              children to Ethiopian culture, food, and places.
-            </p>
-            <p className="mt-3 text-sm text-stone-600">
-              Use this page to help you read the story together, ask thoughtful
-              questions, and extend the adventure with activities at home or in
-              the classroom.
-            </p>
-          </div>
-
-          {/* Optional side card */}
-          <div className="flex-1">
-            <div className="mx-auto max-w-sm rounded-2xl bg-white/90 p-5 shadow-md shadow-purple-200/70 ring-1 ring-purple-100 lg:ml-auto">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-purple-700">
-                Quick downloads
-              </h2>
-              <ul className="mt-3 space-y-2 text-sm text-stone-800">
-                <li>
-                  <Link
-                    href="/activities/hana-activity-pack-all-in-one.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline decoration-purple-400 underline-offset-2 hover:text-purple-700"
-                  >
-                    Hana Activity Pack (all printable pages)
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/activities/hana-discussion-guide.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline decoration-purple-400 underline-offset-2 hover:text-purple-700"
-                  >
-                    One-page discussion guide
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/play"
-                    className="underline decoration-purple-400 underline-offset-2 hover:text-purple-700"
-                  >
-                    View activities online
-                  </Link>
-                </li>
-              </ul>
-              <p className="mt-3 text-xs text-stone-500">
-                All resources are free for personal and classroom use.
+    <main className="min-h-screen bg-slate-950 text-slate-50">
+      {/* Header - Consistent with other pages */}
+      <header className="sticky top-0 z-30 border-b-2 border-violet-300/50 bg-gradient-to-r from-violet-50 via-pink-50 to-cyan-50 backdrop-blur-md shadow-lg shadow-violet-200/30">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+          <Link
+            href="/"
+            className="group flex items-center gap-4 transition-transform hover:scale-105 active:scale-95"
+          >
+            <div className="relative">
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-violet-400 via-pink-400 to-cyan-400 p-1 shadow-xl shadow-violet-400/50 group-hover:shadow-2xl group-hover:shadow-violet-400/70 transition-all group-hover:rotate-3">
+                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-violet-500 via-pink-500 to-cyan-500">
+                  <Image
+                    src="/HanaTheHyena website inside logo.png"
+                    alt="Hana the Hyena"
+                    width={80}
+                    height={80}
+                    className="h-full w-full object-contain p-2"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="text-lg sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-violet-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent">
+                Hana the Hyena
               </p>
             </div>
-          </div>
-        </div>
-      </section>
+          </Link>
 
-      {/* Themes section */}
-      <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-        <header className="max-w-3xl">
-          <h2 className="text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Key themes in Hana's story
-          </h2>
-          <p className="mt-3 text-stone-700">
-            As you read, you might want to draw attention to some of these
-            ideas. They connect naturally to PSHE/SEL, global citizenship,
-            geography, and literacy.
-          </p>
-        </header>
-
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {themes.map((theme) => (
-            <article
-              key={theme.title}
-              className="rounded-2xl border border-pink-200 bg-white/90 p-5 shadow-sm"
+          <nav className="hidden items-center gap-3 sm:flex">
+            <Link
+              href="/the-story"
+              className="group relative rounded-full bg-gradient-to-r from-violet-500 to-purple-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-violet-400/50 transition-all hover:scale-110"
             >
-              <h3 className="text-lg font-semibold text-stone-900">
-                {theme.title}
-              </h3>
-              <p className="mt-2 text-sm text-stone-700">{theme.body}</p>
-            </article>
-          ))}
+              📚 The Story
+            </Link>
+            <Link
+              href="/meet-hana"
+              className="group relative rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-pink-400/50 transition-all hover:scale-110"
+            >
+              🦁 Meet Hana
+            </Link>
+            <Link
+              href="/play"
+              className="group relative rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-cyan-400/50 transition-all hover:scale-110"
+            >
+              🎨 Play
+            </Link>
+            <Link
+              href="/parents-teachers"
+              className="group relative rounded-full border-2 border-indigo-300 bg-gradient-to-r from-indigo-50 to-purple-50 px-5 py-2.5 text-sm font-bold text-indigo-700 shadow-md transition-all hover:scale-110"
+            >
+              👩‍🏫 For Grown-ups
+            </Link>
+          </nav>
         </div>
+      </header>
+
+      <section className="max-w-4xl mx-auto px-4 pt-16 pb-10">
+        <p className="text-sm font-semibold tracking-wide text-emerald-300 uppercase mb-3">
+          For parents &amp; teachers
+        </p>
+        <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
+          Share Hana's story with your children and students
+        </h1>
+        <p className="text-slate-200 max-w-3xl">
+          <span className="italic">The Hyena Who Went To Dinner</span> gently
+          explores courage, belonging, kindness, and Ethiopian culture. This
+          page collects resources to help you use the story at home, in
+          classrooms, or in small groups.
+        </p>
       </section>
 
-      {/* Discussion questions */}
-      <section className="border-y border-cyan-100 bg-cyan-50/50">
-        <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-          <header className="max-w-3xl">
-            <h2 className="text-2xl font-semibold text-stone-900 sm:text-3xl">
-              Discussion questions
+      {/* Resource cards */}
+      <section className="max-w-4xl mx-auto px-4 pb-16 grid gap-6 md:grid-cols-2">
+        <article className="rounded-2xl bg-slate-900/80 border border-slate-700 p-6 flex flex-col justify-between">
+          <div>
+            <h2 className="text-xl font-semibold mb-2">
+              Free Activity Pack (PDF)
             </h2>
-            <p className="mt-3 text-stone-700">
-              Use or adapt these open-ended questions before, during, and after
-              sharing the book. They are suitable for ages 6+ and can be
-              simplified for younger children.
+            <p className="text-sm text-slate-200 mb-3">
+              A ready-to-print bundle of colouring pages, puzzles, and writing
+              prompts based on key scenes from the book. Ideal for follow-up
+              sessions after reading.
             </p>
-          </header>
+            <ul className="text-xs text-slate-300 space-y-1 mb-3">
+              <li>• Supports discussion of feelings and friendships</li>
+              <li>• Introduces Ethiopian food, places, and culture</li>
+              <li>• Suitable for ages 6+</li>
+            </ul>
+          </div>
+          <div className="flex flex-wrap gap-3 mt-3">
+            <a
+              href="/activities/hana-activity-pack-all-in-one.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-5 py-2 text-slate-950 text-sm font-semibold hover:bg-emerald-300 transition"
+            >
+              Download Activity Pack
+            </a>
+          </div>
+        </article>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            {questions.map((block) => (
-              <article
-                key={block.heading}
-                className="rounded-2xl bg-white/90 p-5 shadow-sm ring-1 ring-cyan-50"
+        <article className="rounded-2xl bg-slate-900/80 border border-slate-700 p-6 flex flex-col justify-between">
+          <div>
+            <h2 className="text-xl font-semibold mb-2">
+              One-page Discussion Guide
+            </h2>
+            <p className="text-sm text-slate-200 mb-3">
+              A simple, one-page guide with open questions about courage,
+              feeling small and brave, hospitality, and trying new things. Use
+              it after reading or alongside the Activity Pack.
+            </p>
+            <ul className="text-xs text-slate-300 space-y-1 mb-3">
+              <li>• Helps children reflect on Hana's feelings</li>
+              <li>• Encourages empathy and inclusion</li>
+              <li>• Works for whole-class, small groups, or 1-to-1</li>
+            </ul>
+          </div>
+          <div className="flex flex-wrap gap-3 mt-3">
+            <a
+              href="/activities/hana-discussion-guide.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-amber-400 px-5 py-2 text-slate-950 text-sm font-semibold hover:bg-amber-300 transition"
+            >
+              Download Discussion Guide
+            </a>
+          </div>
+        </article>
+      </section>
+
+      {/* Link back to play page */}
+      <section className="max-w-4xl mx-auto px-4 pb-16">
+        <div className="rounded-2xl bg-slate-900/70 border border-slate-700 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h2 className="text-lg font-semibold mb-1">
+              Looking for the children's view?
+            </h2>
+            <p className="text-sm text-slate-200">
+              Visit the Play &amp; Activities page to see the resources the way
+              children do—colourful icons, simple instructions, and big
+              download buttons.
+            </p>
+          </div>
+          <a
+            href="/play"
+            className="inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-2 text-slate-950 text-sm font-semibold hover:bg-sky-300 transition"
+          >
+            Go to Play &amp; Activities
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-stone-800 bg-slate-950">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-stone-300 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <div>
+            <p className="font-semibold text-stone-100">
+              Hana the Hyena · The Hyena Who Went To Dinner
+            </p>
+            <p className="mt-1 text-[11px] text-stone-400">
+              Created by Joseph Afolabi &amp; Feven Teshome. Published by{" "}
+              <a
+                href="https://habeshapress.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-300 underline underline-offset-2 hover:text-cyan-200"
               >
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-cyan-800">
-                  {block.heading}
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-stone-800">
-                  {block.items.map((q) => (
-                    <li key={q} className="flex gap-2">
-                      <span className="mt-1 h-1 w-1 flex-shrink-0 rounded-full bg-cyan-600" />
-                      <span>{q}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+                Habesha Press
+              </a>
+              .
+            </p>
+          </div>
+          <div className="text-[11px] text-stone-500">
+            © {new Date().getFullYear()} Habesha Press. All rights reserved.
           </div>
         </div>
-      </section>
-
-      {/* Classroom ideas */}
-      <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-        <header className="max-w-3xl">
-          <h2 className="text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Ideas for home and classroom
-          </h2>
-          <p className="mt-3 text-stone-700">
-            These simple activities extend the story and help children make
-            connections with their own lives. Most can be done with just paper,
-            pencils, and the printable pages.
-          </p>
-        </header>
-
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <article className="rounded-2xl border border-violet-200 bg-white/90 p-5 shadow-sm">
-            <h3 className="text-lg font-semibold text-stone-900">
-              Food &amp; Feelings Chart
-            </h3>
-            <p className="mt-2 text-sm text-stone-700">
-              Make a class or family chart with two columns: "New things I've
-              tried" and "How I felt before/after". Children draw or write a new
-              food they've tasted and share their feelings, just like Hana does
-              at dinner.
-            </p>
-          </article>
-
-          <article className="rounded-2xl border border-pink-200 bg-white/90 p-5 shadow-sm">
-            <h3 className="text-lg font-semibold text-stone-900">
-              Map Hana's Journey
-            </h3>
-            <p className="mt-2 text-sm text-stone-700">
-              Using a simple outline of Ethiopia, mark Harar and Addis Ababa.
-              Invite children to draw Hana's path between them, then add a
-              journey of their own—across their town, country, or even from one
-              classroom to another.
-            </p>
-          </article>
-
-          <article className="rounded-2xl border border-cyan-200 bg-white/90 p-5 shadow-sm">
-            <h3 className="text-lg font-semibold text-stone-900">
-              Hospitality role-play
-            </h3>
-            <p className="mt-2 text-sm text-stone-700">
-              In small groups, children act out welcoming a new person to their
-              class or neighbourhood. Discuss simple ways to help someone feel
-              included: smiling, offering a seat, explaining routines, inviting
-              them to play.
-            </p>
-          </article>
-
-          <article className="rounded-2xl border border-purple-200 bg-white/90 p-5 shadow-sm">
-            <h3 className="text-lg font-semibold text-stone-900">
-              Postcard from Hana
-            </h3>
-            <p className="mt-2 text-sm text-stone-700">
-              Using the printable postcard page, children write and illustrate
-              a short message from Hana to the hyenas back in Harar, describing
-              what she saw, ate, and learned in Addis Ababa.
-            </p>
-          </article>
-        </div>
-
-        <div className="mt-8 rounded-2xl bg-stone-900 px-5 py-6 text-sm text-stone-100 sm:px-6">
-          <p>
-            We would love to see how you use Hana's story. If you're happy to
-            share classroom displays or children's work, you can email{" "}
-            <a
-              href="mailto:hello@habeshapress.com"
-              className="font-semibold text-cyan-300 underline underline-offset-2 hover:text-cyan-200"
-            >
-              hello@habeshapress.com
-            </a>{" "}
-            with photos (no faces if you prefer) and a short note from your
-            school.
-          </p>
-        </div>
-      </section>
+      </footer>
     </main>
   );
 }

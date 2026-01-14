@@ -1,53 +1,54 @@
 import Link from "next/link";
+import Image from "next/image";
 
-const activities = [
+const singleActivities = [
   {
     id: "dream-bubbles",
-    title: "Hana's Big Dreams (Colouring Page)",
+    title: "Hana's Dream Bubbles – Colouring",
     description:
-      "Colour Hana as she dreams about Addis Ababa, then draw your own dream in the empty bubble.",
+      "Colour Hana dreaming under the night sky and draw your own pictures inside her dream bubbles.",
     pdf: "/activities/hana-dream-bubbles-colouring.pdf",
-    badge: "Colouring",
+    bestFor: "Ages 6+ · imagination & prediction",
   },
   {
     id: "dinner-table",
-    title: "Dinner with New Friends (Colouring Page)",
+    title: "Hana's Ethiopian Dinner – Colouring",
     description:
-      "Colour the dinner table with injera, doro wat, and gomen besiga – and add your favourite food.",
+      "Colour the big dinner scene with injera, doro wat, gomen besiga, and Hana's new friends.",
     pdf: "/activities/hana-dinner-table-colouring.pdf",
-    badge: "Colouring",
+    bestFor: "Ages 6+ · food & culture",
   },
   {
     id: "journey-maze",
-    title: "Help Hana Find the City (Maze)",
+    title: "Forest to City Journey Maze",
     description:
-      "Guide Hana from Harar to Addis Ababa through a fun, printable maze based on the story map.",
+      "Help Hana find her way from Harar to Addis Ababa through forests, rivers, and hills.",
     pdf: "/activities/hana-journey-maze.pdf",
-    badge: "Puzzle",
+    bestFor: "Ages 6–9 · problem solving",
   },
   {
     id: "spot-difference",
-    title: "Spot the Differences – On the Way to Addis",
+    title: "Spot the Difference – Forest to City",
     description:
-      "Compare the two journey scenes, circle the 7 differences, then colour both pictures.",
+      "Compare Hana's quiet home with the busy city and see how many differences you can find.",
     pdf: "/activities/hana-spot-the-difference-journey.pdf",
-    badge: "Puzzle",
+    bestFor: "Ages 6–9 · observation skills",
   },
   {
     id: "feelings-timeline",
-    title: "Hana's Feelings Journey",
+    title: "Hana's Feelings Timeline",
     description:
-      "Match Hana's expressions to different moments in the story and talk about times you felt the same.",
+      "Track how Hana feels at each stage of her journey and talk about times you've felt the same.",
     pdf: "/activities/hana-feelings-timeline.pdf",
-    badge: "Feelings",
+    bestFor: "Ages 7+ · PSHE & wellbeing",
   },
   {
-    id: "postcard-from-addis",
-    title: "Postcard from Hana",
+    id: "postcard",
+    title: "Postcard from Addis Ababa",
     description:
-      "Write and draw a postcard from Hana to the hyenas in Harar, describing her big-city adventure.",
+      "Write a postcard as Hana, telling a friend all about her big-city adventure and new friends.",
     pdf: "/activities/hana-postcard-from-addis.pdf",
-    badge: "Writing",
+    bestFor: "Ages 7+ · writing & reflection",
   },
 ];
 
@@ -59,189 +60,202 @@ export const metadata = {
 
 export default function PlayPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-cyan-50 via-sky-50 to-purple-50/30">
-      {/* Hero section */}
-      <section className="border-b border-cyan-200 bg-gradient-to-b from-cyan-50 to-sky-100/60">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:flex-row lg:items-center">
-          <div className="flex-1">
-            <h1 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-              Play & Activities with Hana
-            </h1>
-            <p className="mt-4 text-lg text-stone-700">
-              Ready to go on an adventure with Hana the Hyena? Print these
-              free colouring pages, puzzles, and creative activities to enjoy
-              at home or in the classroom.
-            </p>
-            <p className="mt-3 text-sm text-stone-600">
-              All activities are based on the picture book{" "}
-              <em>The Hyena Who Went To Dinner</em>. Grown-ups: please help
-              children download and print the PDFs.
-            </p>
-          </div>
-
-          {/* Optional illustration placeholder */}
-          <div className="flex-1">
-            <div className="mx-auto h-40 w-40 rounded-3xl bg-white/70 shadow-md shadow-cyan-200/60 ring-1 ring-cyan-100 sm:h-48 sm:w-48 lg:ml-auto">
-              {/* Replace this with an actual Hana illustration */}
-              <div className="flex h-full items-center justify-center text-sm text-stone-400">
-                Hana illustration
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Activity Pack Featured Section */}
-      <section className="border-y border-violet-200 bg-gradient-to-br from-violet-100 via-pink-50 to-cyan-50">
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <div className="mx-auto max-w-4xl">
-            <div className="rounded-3xl border-2 border-violet-300 bg-white p-8 shadow-xl shadow-violet-200/50 ring-1 ring-violet-100 sm:p-10">
-              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-8">
-                <div className="flex-1">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-800">
-                    <span>⭐</span>
-                    <span>Complete Activity Pack</span>
-                  </div>
-                  <h2 className="mt-4 text-2xl font-bold text-stone-900 sm:text-3xl">
-                    Hana Activity Pack
-                  </h2>
-                  <p className="mt-3 text-sm italic text-emerald-700 sm:text-base">
-                    Includes a one-page Discussion Guide for parents and teachers to help you talk about courage, belonging, and kindness after reading Hana's story.
-                  </p>
-                  <p className="mt-3 text-base text-stone-700 sm:text-lg">
-                    Get all 6 printable activities in one convenient PDF. Perfect
-                    for teachers, parents, and anyone who wants everything in
-                    one place.
-                  </p>
-                  <ul className="mt-4 space-y-2 text-sm text-stone-700">
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-600" />
-                      <span>
-                        <strong>6 activities</strong> – colouring pages, puzzles,
-                        and creative writing
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-600" />
-                      <span>
-                        <strong>Ready to print</strong> – A4 format, black and
-                        white, classroom-friendly
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-600" />
-                      <span>
-                        <strong>Free forever</strong> – for personal and
-                        classroom use
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                    <Link
-                      href="/activities/hana-activity-pack-all-in-one.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-violet-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-violet-600/30 transition hover:bg-violet-700 hover:shadow-xl hover:shadow-violet-600/40"
-                    >
-                      Download Complete Pack
-                      <span aria-hidden="true" className="ml-2 text-lg">
-                        ↓
-                      </span>
-                    </Link>
-                    <Link
-                      href="/parents-teachers"
-                      className="inline-flex items-center justify-center rounded-full border-2 border-violet-300 bg-white px-6 py-3 text-base font-semibold text-violet-700 transition hover:bg-violet-50"
-                    >
-                      For Teachers & Parents →
-                    </Link>
-                  </div>
-                  <p className="mt-4 text-xs text-stone-500">
-                    Individual activities available below ↓
-                  </p>
-                </div>
-                <div className="flex-shrink-0 lg:ml-4">
-                  <div className="mx-auto flex h-32 w-32 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-300 via-pink-300 to-cyan-300 shadow-lg lg:h-40 lg:w-40">
-                    <span className="text-4xl lg:text-5xl">📦</span>
-                  </div>
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+      {/* Header - Consistent with other pages */}
+      <header className="sticky top-0 z-30 border-b-2 border-violet-300/50 bg-gradient-to-r from-violet-50 via-pink-50 to-cyan-50 backdrop-blur-md shadow-lg shadow-violet-200/30">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+          <Link
+            href="/"
+            className="group flex items-center gap-4 transition-transform hover:scale-105 active:scale-95"
+          >
+            <div className="relative">
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-violet-400 via-pink-400 to-cyan-400 p-1 shadow-xl shadow-violet-400/50 group-hover:shadow-2xl group-hover:shadow-violet-400/70 transition-all group-hover:rotate-3">
+                <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-violet-500 via-pink-500 to-cyan-500">
+                  <Image
+                    src="/HanaTheHyena website inside logo.png"
+                    alt="Hana the Hyena"
+                    width={80}
+                    height={80}
+                    className="h-full w-full object-contain p-2"
+                    priority
+                  />
                 </div>
               </div>
             </div>
+            <div>
+              <p className="text-lg sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-violet-600 via-pink-600 to-cyan-600 bg-clip-text text-transparent">
+                Hana the Hyena
+              </p>
+            </div>
+          </Link>
+
+          <nav className="hidden items-center gap-3 sm:flex">
+            <Link
+              href="/the-story"
+              className="group relative rounded-full bg-gradient-to-r from-violet-500 to-purple-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-violet-400/50 transition-all hover:scale-110"
+            >
+              📚 The Story
+            </Link>
+            <Link
+              href="/meet-hana"
+              className="group relative rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-pink-400/50 transition-all hover:scale-110"
+            >
+              🦁 Meet Hana
+            </Link>
+            <Link
+              href="/play"
+              className="group relative rounded-full bg-gradient-to-r from-cyan-500 to-sky-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-cyan-400/50 transition-all hover:scale-110"
+            >
+              🎨 Play
+            </Link>
+            <Link
+              href="/parents-teachers"
+              className="group relative rounded-full border-2 border-indigo-300 bg-gradient-to-r from-indigo-50 to-purple-50 px-5 py-2.5 text-sm font-bold text-indigo-700 shadow-md transition-all hover:scale-110"
+            >
+              👩‍🏫 For Grown-ups
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      <section className="max-w-5xl mx-auto px-4 pt-16 pb-10">
+        <p className="text-sm font-semibold tracking-wide text-amber-300 uppercase mb-3">
+          Free printables
+        </p>
+        <h1 className="text-3xl md:text-4xl font-extrabold mb-4">
+          Play &amp; Activities with Hana the Hyena
+        </h1>
+        <p className="text-slate-200 max-w-3xl">
+          Download free colouring pages, puzzles, and writing prompts inspired
+          by{" "}
+          <span className="italic">The Hyena Who Went To Dinner</span>. Perfect
+          for homes, classrooms, and libraries.
+        </p>
+      </section>
+
+      {/* Highlighted pack + discussion guide */}
+      <section className="max-w-5xl mx-auto px-4 pb-6 grid gap-6 md:grid-cols-[1.6fr,1.1fr]">
+        <div className="rounded-2xl bg-gradient-to-br from-amber-500 via-orange-500 to-pink-500 p-[1px] shadow-xl">
+          <div className="h-full rounded-2xl bg-slate-950/95 p-6 flex flex-col md:flex-row md:items-center gap-6">
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold mb-2">
+                Hana the Hyena Activity Pack (All-in-One)
+              </h2>
+              <p className="text-slate-200 mb-3">
+                Get all the activities in one easy PDF bundle: colouring pages,
+                maze, spot-the-difference, feelings timeline, and postcard
+                writing.
+              </p>
+              <p className="text-sm text-amber-200 mb-4">
+                Includes a one-page <span className="font-semibold">
+                  Discussion Guide
+                </span>{" "}
+                for adults with questions to help you talk about courage,
+                belonging, and kindness.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="/activities/hana-activity-pack-all-in-one.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-amber-400 px-5 py-2 text-slate-950 font-semibold shadow-md hover:bg-amber-300 transition"
+                >
+                  Download Activity Pack
+                </a>
+                <a
+                  href="/activities/hana-discussion-guide.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border border-amber-300/80 px-5 py-2 text-amber-100 text-sm hover:bg-amber-300/10 transition"
+                >
+                  View Discussion Guide only
+                </a>
+              </div>
+            </div>
+            {/* Optional thumbnail image */}
+            <div className="w-full md:w-40 h-40 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-xs text-slate-400 text-center px-4">
+              Activity Pack cover art
+              <br />
+              (swap this box for a real image later)
+            </div>
           </div>
+        </div>
+
+        <div className="rounded-2xl bg-slate-900/70 border border-slate-700/70 p-5">
+          <h3 className="text-lg font-semibold mb-2 text-amber-200">
+            How to use the pack
+          </h3>
+          <ul className="space-y-2 text-sm text-slate-200">
+            <li>• Print in black &amp; white or colour.</li>
+            <li>• Use one page at a time or the full pack.</li>
+            <li>• Great for rainy days, reading corners, or homework.</li>
+          </ul>
         </div>
       </section>
 
-      {/* Activity cards */}
-      <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-        <header className="max-w-3xl">
-          <h2 className="text-2xl font-semibold text-stone-900 sm:text-3xl">
-            Individual activities
-          </h2>
-          <p className="mt-3 text-stone-700">
-            Download individual activities or get them all in the complete pack
-            above. Click on an activity to open the PDF in a new tab. You can
-            print as many copies as you need for personal or classroom use.
-          </p>
-        </header>
+      {/* Individual activities */}
+      <section className="max-w-5xl mx-auto px-4 pb-16">
+        <h2 className="text-xl font-bold mb-4">Download individual pages</h2>
+        <p className="text-sm text-slate-300 mb-6 max-w-3xl">
+          Prefer to pick and choose? You can also download each activity on its
+          own below.
+        </p>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {activities.map((activity) => (
+        <div className="grid gap-5 md:grid-cols-2">
+          {singleActivities.map((activity) => (
             <article
               key={activity.id}
-              className="group flex flex-col rounded-2xl border border-violet-100 bg-white/90 p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              className="rounded-2xl bg-slate-900/70 border border-slate-800 p-5 flex flex-col justify-between shadow-sm"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="inline-flex items-center rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-700">
-                    {activity.badge}
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-stone-900 group-hover:text-violet-700">
-                    {activity.title}
-                  </h3>
-                </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-1">
+                  {activity.title}
+                </h3>
+                <p className="text-sm text-slate-200 mb-2">
+                  {activity.description}
+                </p>
+                <p className="text-xs text-slate-400">{activity.bestFor}</p>
               </div>
-
-              <p className="mt-3 flex-1 text-sm text-stone-700">
-                {activity.description}
-              </p>
-
-              <div className="mt-4 flex items-center justify-between gap-3">
-                <Link
+              <div className="mt-4">
+                <a
                   href={activity.pdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-violet-700"
+                  className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-2 text-slate-950 text-sm font-semibold hover:bg-emerald-300 transition"
                 >
                   Download PDF
-                  <span aria-hidden="true" className="ml-2">
-                    ↓
-                  </span>
-                </Link>
-                <p className="text-xs text-stone-500">
-                  A4 · Black and white · Printable
-                </p>
+                </a>
               </div>
             </article>
           ))}
         </div>
-
-        {/* Additional resources note */}
-        <div className="mt-10 rounded-2xl border border-cyan-100 bg-cyan-50/60 px-5 py-4 text-sm text-stone-800 sm:px-6">
-          <p className="font-semibold text-cyan-900">
-            Looking for more resources?
-          </p>
-          <p className="mt-2">
-            Visit our{" "}
-            <Link
-              href="/parents-teachers"
-              className="font-semibold text-cyan-800 underline decoration-cyan-400 underline-offset-2 hover:text-cyan-900"
-            >
-              Parents & Teachers page
-            </Link>{" "}
-            for discussion questions, curriculum links, and classroom activity
-            ideas.
-          </p>
-        </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-stone-800 bg-slate-950">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-stone-300 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <div>
+            <p className="font-semibold text-stone-100">
+              Hana the Hyena · The Hyena Who Went To Dinner
+            </p>
+            <p className="mt-1 text-[11px] text-stone-400">
+              Created by Joseph Afolabi &amp; Feven Teshome. Published by{" "}
+              <a
+                href="https://habeshapress.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-300 underline underline-offset-2 hover:text-cyan-200"
+              >
+                Habesha Press
+              </a>
+              .
+            </p>
+          </div>
+          <div className="text-[11px] text-stone-500">
+            © {new Date().getFullYear()} Habesha Press. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

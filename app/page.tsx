@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import MobileMenu from "./components/MobileMenu";
 
 export const metadata = {
   title: "Hana the Hyena – The Hyena Who Went To Dinner | Official Site",
@@ -12,7 +13,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-gradient-to-b from-sky-50 via-cyan-50 to-purple-50/30 text-stone-900">
       {/* Header - Colorful & Child-Friendly - BIGGER! */}
       <header className="sticky top-0 z-30 border-b-2 border-violet-300/50 bg-gradient-to-r from-violet-50 via-pink-50 to-cyan-50 backdrop-blur-md shadow-lg shadow-violet-200/30">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
+        <div className="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
           {/* Logo Section - BIGGER & More Playful */}
           <Link href="/" className="group flex items-center gap-4 transition-transform hover:scale-105 active:scale-95">
             <div className="relative">
@@ -79,20 +80,7 @@ export default function HomePage() {
           </nav>
 
           {/* Mobile Navigation - BIGGER Fun Hamburger Style */}
-          <div className="flex items-center gap-3 sm:hidden">
-            <Link
-              href="/play"
-              className="relative rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-400/50 transition-all active:scale-95"
-            >
-              🎨 Play
-            </Link>
-            <button
-              aria-label="Menu"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-pink-500 text-white shadow-lg transition-all active:scale-95"
-            >
-              <span className="text-2xl">☰</span>
-            </button>
-          </div>
+          <MobileMenu />
         </div>
 
         {/* BIGGER Decorative bottom border with animated stars */}
