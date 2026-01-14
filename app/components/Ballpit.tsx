@@ -338,7 +338,7 @@ function L() {
 
 function TouchStart(e: any) {
   if (e.touches.length > 0) {
-    e.preventDefault();
+    // Do NOT call preventDefault here – it blocks page scrolling on mobile
     A.x = e.touches[0].clientX;
     A.y = e.touches[0].clientY;
 
@@ -359,7 +359,7 @@ function TouchStart(e: any) {
 
 function TouchMove(e: any) {
   if (e.touches.length > 0) {
-    e.preventDefault();
+    // Do NOT call preventDefault here – allow the browser to handle scroll
     A.x = e.touches[0].clientX;
     A.y = e.touches[0].clientY;
 
