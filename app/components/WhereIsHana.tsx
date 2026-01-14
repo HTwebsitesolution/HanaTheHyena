@@ -4,33 +4,44 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import Ballpit from "./Ballpit";
 import Image from "next/image";
 
-const HANA_SLOTS = 5; // how many horizontal positions Hana can hide in
+interface HanaPosition {
+  x: number; // percentage from left (0-100)
+  y: number; // percentage from top (0-100)
+}
 
-const randomSlot = (current: number | null) => {
-  let next = Math.floor(Math.random() * HANA_SLOTS);
-  // avoid teleporting to the exact same slot if possible
-  if (current !== null && HANA_SLOTS > 1) {
-    while (next === current) {
-      next = Math.floor(Math.random() * HANA_SLOTS);
-    }
-  }
-  return next;
+const randomPosition = (): HanaPosition => {
+  // Generate random position with padding to keep Hana visible
+  // X: 10% to 90% (avoid edges)
+  // Y: 15% to 85% (avoid top/bottom edges, but allow all vertical positions)
+  return {
+    x: Math.random() * 80 + 10, // 10% to 90%
+    y: Math.random() * 70 + 15, // 15% to 85%
+  };
 };
 
 const WhereIsHana: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [hanaSlot, setHanaSlot] = useState<number | null>(0);
+  const [hanaPosition, setHanaPosition] = useState<HanaPosition | null>(null);
   const [found, setFound] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
-  // size of Hana's hit-area in % of container width/height
-  const HANA_WIDTH_PCT = 0.22; // Slightly larger hit area for easier discovery
-  const HANA_HEIGHT_PCT = 0.45; // Adjusted height
+  // size of Hana's hit-area in % of container width/height - smaller for more challenge
+  const HANA_WIDTH_PCT = 0.12; // Smaller hit area for more challenge
+  const HANA_HEIGHT_PCT = 0.25; // Reduced height for more precision needed
+
+  // Throttle detection to prevent too frequent triggers
+  const lastCheckRef = useRef<number>(0);
+  const THROTTLE_MS = 100; // Only check every 100ms
 
   // called whenever cursor moves over the game area
   const handleMouseMove = useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
-      if (!containerRef.current || hanaSlot === null) return;
+      if (!containerRef.current || hanaPosition === null || found) return;
+
+      // Throttle the detection
+      const now = Date.now();
+      if (now - lastCheckRef.current < THROTTLE_MS) return;
+      lastCheckRef.current = now;
 
       const rect = containerRef.current.getBoundingClientRect();
       const { clientX, clientY } = event;
@@ -38,13 +49,11 @@ const WhereIsHana: React.FC = () => {
       const x = clientX - rect.left;
       const y = clientY - rect.top;
 
-      const slotWidth = rect.width / HANA_SLOTS;
-      const hanaCenterX = slotWidth * (hanaSlot + 0.5);
+      // Calculate Hana's position in pixels based on percentage
+      const hanaCenterX = (rect.width * hanaPosition.x) / 100;
+      const hanaCenterY = (rect.height * hanaPosition.y) / 100;
       const hanaWidth = rect.width * HANA_WIDTH_PCT;
       const hanaHeight = rect.height * HANA_HEIGHT_PCT;
-
-      // Hana hides in the bottom portion of the container, deeper behind balls
-      const hanaCenterY = rect.height * 0.82;
 
       const left = hanaCenterX - hanaWidth / 2;
       const right = hanaCenterX + hanaWidth / 2;
@@ -61,8 +70,9 @@ const WhereIsHana: React.FC = () => {
 
         // move Hana to a new hiding spot after 2.5 seconds (giving time to see her)
         setTimeout(() => {
-          setHanaSlot((current) => randomSlot(current));
+          setHanaPosition(randomPosition());
           setFound(false);
+          lastCheckRef.current = 0; // Reset throttle after finding
         }, 2500);
 
         // hide toast after 3 seconds
@@ -71,12 +81,12 @@ const WhereIsHana: React.FC = () => {
         }, 3000);
       }
     },
-    [found, hanaSlot]
+    [found, hanaPosition]
   );
 
-  // if you ever want Hana to start in a random place on mount
+  // Initialize Hana in a random position on mount
   useEffect(() => {
-    setHanaSlot(randomSlot(null));
+    setHanaPosition(randomPosition());
   }, []);
 
   return (
@@ -107,6 +117,14 @@ const WhereIsHana: React.FC = () => {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Tip statement above the ball pit */}
+        <div className="mb-3 flex items-center justify-center">
+          <div className="px-4 py-2 rounded-full bg-slate-900/75 backdrop-blur text-xs sm:text-sm text-slate-100 border border-slate-700">
+            👀 Tip: move your mouse slowly… Hana keeps hiding behind the
+            biggest pile of balls!
+          </div>
         </div>
 
         <div
@@ -141,14 +159,14 @@ const WhereIsHana: React.FC = () => {
           </div>
 
           {/* Hana illustration – hidden behind balls, visible when found */}
-          {hanaSlot !== null && (
+          {hanaPosition !== null && (
             <div
               className="absolute pointer-events-none transition-all duration-300 ease-out"
               style={{
-                left: `${(100 / HANA_SLOTS) * hanaSlot + 50 / HANA_SLOTS - (HANA_WIDTH_PCT * 50)}%`,
+                left: `${hanaPosition.x}%`,
+                top: `${hanaPosition.y}%`,
                 width: `${HANA_WIDTH_PCT * 100}%`,
-                transform: "translateX(-50%)",
-                bottom: "5%", // Position her at the bottom, deep in the ball pit
+                transform: "translate(-50%, -50%)", // Center on the position point
                 zIndex: found ? 20 : 0, // Bring to front when found
                 opacity: found ? 1.0 : 0.05, // Fully visible when found
               }}
@@ -170,14 +188,6 @@ const WhereIsHana: React.FC = () => {
               </div>
             </div>
           )}
-
-          {/* Overlay instructions at bottom */}
-          <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 flex items-center justify-center">
-            <div className="px-4 py-2 rounded-full bg-slate-900/75 backdrop-blur text-xs sm:text-sm text-slate-100 border border-slate-700">
-              👀 Tip: move your mouse slowly… Hana keeps hiding behind the
-              biggest pile of balls!
-            </div>
-          </div>
         </div>
       </div>
     </section>
