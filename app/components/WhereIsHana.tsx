@@ -133,7 +133,9 @@ const WhereIsHana: React.FC = () => {
           style={{ minHeight: 260, maxHeight: 320 }}
           onMouseMove={handleMouseMove}
           onTouchMove={(e) => {
-            if (e.touches?.[0]) {
+            // Don't prevent default - allow scrolling
+            // Only handle touch if it's a single touch and user is moving slowly (interacting, not scrolling)
+            if (e.touches?.length === 1) {
               const touch = e.touches[0];
               // synthesize a MouseEvent-like object for reuse
               handleMouseMove({
@@ -146,8 +148,11 @@ const WhereIsHana: React.FC = () => {
         >
           {/* Ballpit canvas - must be on top to cover Hana */}
           <div 
-            className="absolute inset-0 z-10 transition-opacity duration-300"
-            style={{ opacity: found ? 0.3 : 1.0 }}
+            className="absolute inset-0 z-10 transition-opacity duration-300 pointer-events-auto"
+            style={{ 
+              opacity: found ? 0.3 : 1.0,
+              touchAction: 'pan-y'
+            }}
           >
             <Ballpit
               count={880}

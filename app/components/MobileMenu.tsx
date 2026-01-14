@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ export default function MobileMenu() {
   return (
     <>
       {/* Mobile Navigation - BIGGER Fun Hamburger Style */}
-      <div className="flex items-center gap-3 sm:hidden">
+      <div className="flex items-center gap-3 sm:hidden relative z-50">
         <Link
           href="/play"
           className="relative rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-400/50 transition-all active:scale-95 touch-manipulation"
@@ -38,7 +39,7 @@ export default function MobileMenu() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="absolute left-0 right-0 top-full z-50 border-b-2 border-green-300/50 bg-gradient-to-b from-green-50 via-sky-50 to-orange-50 shadow-xl sm:hidden">
+        <div className="fixed left-0 right-0 top-[73px] z-[100] border-b-2 border-green-300/50 bg-gradient-to-b from-green-50 via-sky-50 to-orange-50 shadow-xl sm:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4">
             <Link
               href="/the-story"
@@ -57,10 +58,17 @@ export default function MobileMenu() {
                 e.stopPropagation();
                 setIsOpen(false);
               }}
-              className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-orange-400/50 transition-all active:scale-95 touch-manipulation"
+              className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-orange-400/50 transition-all active:scale-95 touch-manipulation flex items-center justify-center gap-2"
               style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
-              🦁 Meet Hana
+              <Image
+                src="/HanaTheHyena website inside logo.png"
+                alt="Hana"
+                width={24}
+                height={24}
+                className="h-6 w-6 object-contain"
+              />
+              Meet Hana
             </Link>
             <Link
               href="/play"

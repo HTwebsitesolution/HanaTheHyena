@@ -696,8 +696,9 @@ function createBallpit(e: HTMLCanvasElement, t: any = {}) {
   const r = new a();
   let c = false;
 
-  // Use 'manipulation' instead of 'none' to allow page scrolling while preventing canvas gestures
-  e.style.touchAction = 'manipulation';
+  // Allow vertical scrolling (pan-y) while preventing horizontal panning
+  // This allows users to scroll the page while still interacting with the canvas
+  e.style.touchAction = 'pan-y';
   e.style.userSelect = 'none';
   e.style.webkitUserSelect = 'none';
 
