@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  
+  /* Ensure buttons and links work properly on mobile */
+  button,
+  a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* Prevent text selection on buttons during touch */
+  button {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
 @layer utilities {
   /* Sparkle animation for header decorations */
   @keyframes sparkle {

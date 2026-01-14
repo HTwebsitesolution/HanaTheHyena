@@ -696,7 +696,8 @@ function createBallpit(e: HTMLCanvasElement, t: any = {}) {
   const r = new a();
   let c = false;
 
-  e.style.touchAction = 'none';
+  // Use 'manipulation' instead of 'none' to allow page scrolling while preventing canvas gestures
+  e.style.touchAction = 'manipulation';
   e.style.userSelect = 'none';
   e.style.webkitUserSelect = 'none';
 

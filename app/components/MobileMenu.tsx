@@ -12,14 +12,25 @@ export default function MobileMenu() {
       <div className="flex items-center gap-3 sm:hidden">
         <Link
           href="/play"
-          className="relative rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-400/50 transition-all active:scale-95"
+          className="relative rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-400/50 transition-all active:scale-95 touch-manipulation"
+          style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
         >
           🎨 Play
         </Link>
         <button
           aria-label="Menu"
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-orange-500 text-white shadow-lg transition-all active:scale-95"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsOpen(!isOpen);
+          }}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsOpen(!isOpen);
+          }}
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-orange-500 text-white shadow-lg transition-all active:scale-95 touch-manipulation"
+          style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
         >
           <span className="text-2xl">{isOpen ? "✕" : "☰"}</span>
         </button>
@@ -31,29 +42,45 @@ export default function MobileMenu() {
           <nav className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4">
             <Link
               href="/the-story"
-              onClick={() => setIsOpen(false)}
-              className="rounded-full bg-gradient-to-r from-green-500 to-emerald-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-green-400/50 transition-all active:scale-95"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+              className="rounded-full bg-gradient-to-r from-green-500 to-emerald-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-green-400/50 transition-all active:scale-95 touch-manipulation"
+              style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
               📚 The Story
             </Link>
             <Link
               href="/meet-hana"
-              onClick={() => setIsOpen(false)}
-              className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-orange-400/50 transition-all active:scale-95"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+              className="rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-orange-400/50 transition-all active:scale-95 touch-manipulation"
+              style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
               🦁 Meet Hana
             </Link>
             <Link
               href="/play"
-              onClick={() => setIsOpen(false)}
-              className="rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-sky-400/50 transition-all active:scale-95"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+              className="rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-sky-400/50 transition-all active:scale-95 touch-manipulation"
+              style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
               🎨 Play
             </Link>
             <Link
               href="/parents-teachers"
-              onClick={() => setIsOpen(false)}
-              className="rounded-full border-2 border-green-300 bg-gradient-to-r from-green-50 to-emerald-50 px-5 py-3 text-center text-sm font-bold text-green-700 shadow-md transition-all active:scale-95"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+              className="rounded-full border-2 border-green-300 bg-gradient-to-r from-green-50 to-emerald-50 px-5 py-3 text-center text-sm font-bold text-green-700 shadow-md transition-all active:scale-95 touch-manipulation"
+              style={{ touchAction: 'manipulation', WebkitTapHighlightColor: 'transparent' }}
             >
               👩‍🏫 For Grown-ups
             </Link>
