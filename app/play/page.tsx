@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import MobileMenu from "../components/MobileMenu";
 
 const singleActivities = [
   {
@@ -115,6 +116,9 @@ export default function PlayPage() {
               👩‍🏫 For Grown-ups
             </Link>
           </nav>
+
+          {/* Mobile Navigation */}
+          <MobileMenu />
         </div>
       </header>
 

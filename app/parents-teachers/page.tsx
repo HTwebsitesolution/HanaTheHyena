@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import MobileMenu from "../components/MobileMenu";
 
 export const metadata = {
   title: "For Parents & Teachers | Hana the Hyena",
@@ -64,6 +65,9 @@ export default function ParentsTeachersPage() {
               👩‍🏫 For Grown-ups
             </Link>
           </nav>
+
+          {/* Mobile Navigation */}
+          <MobileMenu />
         </div>
       </header>
 
