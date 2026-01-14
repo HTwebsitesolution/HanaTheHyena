@@ -26,17 +26,17 @@ import {
 import { RoomEnvironment as z } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
 class x {
-  #e;
-  canvas;
-  camera;
-  cameraMinAspect;
-  cameraMaxAspect;
-  cameraFov;
-  maxPixelRatio;
-  minPixelRatio;
-  scene;
-  renderer;
-  #t;
+  #e: any;
+  canvas: HTMLCanvasElement | null = null;
+  camera: t;
+  cameraMinAspect: number | undefined;
+  cameraMaxAspect: number | undefined;
+  cameraFov: number;
+  maxPixelRatio: number | undefined;
+  minPixelRatio: number | undefined;
+  scene: i;
+  renderer: s;
+  #t: any;
   size = { width: 0, height: 0, wWidth: 0, wHeight: 0, ratio: 0, pixelRatio: 0 };
   render = this.#i;
   onBeforeRender = () => {};
@@ -45,13 +45,13 @@ class x {
   #s = false;
   #n = false;
   isDisposed = false;
-  #o;
-  #r;
-  #a;
+  #o: IntersectionObserver | null = null;
+  #r: ResizeObserver | null = null;
+  #a: NodeJS.Timeout | null = null;
   #c = new e();
   #h = { elapsed: 0, delta: 0 };
-  #l;
-  constructor(e) {
+  #l: number | undefined;
+  constructor(e: any) {
     this.#e = { ...e };
     this.#m();
     this.#d();
@@ -236,7 +236,7 @@ class x {
 const b = new Map(),
   A = new r();
 let R = false;
-function S(e) {
+function S(e: any) {
   const t = {
     position: new r(),
     nPosition: new r(),
@@ -284,7 +284,7 @@ function S(e) {
   return t;
 }
 
-function M(e) {
+function M(e: any) {
   A.x = e.clientX;
   A.y = e.clientY;
   processInteraction();
@@ -307,7 +307,7 @@ function processInteraction() {
   }
 }
 
-function C(e) {
+function C(e: any) {
   A.x = e.clientX;
   A.y = e.clientY;
   for (const [elem, t] of b) {
@@ -326,7 +326,7 @@ function L() {
   }
 }
 
-function TouchStart(e) {
+function TouchStart(e: any) {
   if (e.touches.length > 0) {
     e.preventDefault();
     A.x = e.touches[0].clientX;
@@ -347,7 +347,7 @@ function TouchStart(e) {
   }
 }
 
-function TouchMove(e) {
+function TouchMove(e: any) {
   if (e.touches.length > 0) {
     e.preventDefault();
     A.x = e.touches[0].clientX;
@@ -383,7 +383,7 @@ function TouchEnd() {
   }
 }
 
-function P(e, t) {
+function P(e: any, t: any) {
   const { position: i, nPosition: s } = e;
   i.x = A.x - t.left;
   i.y = A.y - t.top;
@@ -409,7 +409,7 @@ const H = new a();
 const T = new a();
 
 class W {
-  constructor(e) {
+  constructor(e: any) {
     this.config = e;
     this.positionData = new Float32Array(3 * e.count).fill(0);
     this.velocityData = new Float32Array(3 * e.count).fill(0);
@@ -522,7 +522,7 @@ class W {
 }
 
 class Y extends c {
-  constructor(e) {
+  constructor(e: any) {
     super(e);
     this.uniforms = {
       thicknessDistortion: { value: 0.1 },
@@ -580,7 +580,7 @@ const X = {
 const U = new m();
 
 class Z extends d {
-  constructor(e, t = {}) {
+  constructor(e: any, t: any = {}) {
     const i = { ...X, ...t };
     const s = new z();
     const n = new p(e, 0.04).fromScene(s).texture;
@@ -653,7 +653,7 @@ class Z extends d {
   }
 }
 
-function createBallpit(e, t = {}) {
+function createBallpit(e: HTMLCanvasElement, t: any = {}) {
   const i = new x({
     canvas: e,
     size: 'parent',
